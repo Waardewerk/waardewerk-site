@@ -22,7 +22,7 @@ export default function TWO() {
         {/* DEFINITIE */}
         <div style={{ background: '#1B3A6B', borderRadius: 14, padding: '2rem 2.25rem', marginBottom: '2.75rem' }}>
           <p style={{ fontSize: 17, lineHeight: 1.75, color: 'rgba(255,255,255,0.92)' }}>
-            <strong style={{ color: '#fff', fontWeight: 600 }}>De TWO</strong> is een bedrijf of samenwerkingsvorm die de regie voert over instroom, begeleiding en subsidiëring van personeel met een afstand tot de arbeidsmarkt. Praktisch uitvoerend, samenwerkend met de lokale overheid en gericht op <strong style={{ color: '#fff', fontWeight: 600 }}>duurzame instroom</strong>. Het eigenaarschap van de TWO en de uitvoering ligt waar het hoort, bij de ondernemers.
+            <strong style={{ color: '#fff', fontWeight: 600 }}>De TWO</strong> is een bedrijf of samenwerkingsvorm die de regie voert over instroom, begeleiding en subsidiëring van personeel met een afstand tot de arbeidsmarkt. Praktisch uitvoerend, samenwerkend met de lokale overheid en gericht op <strong style={{ color: '#fff', fontWeight: 600 }}>duurzame instroom</strong>.
           </p>
         </div>
 
