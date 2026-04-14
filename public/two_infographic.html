@@ -35,6 +35,8 @@
     position: relative;
     overflow: hidden;
     page-break-after: always;
+    display: flex;
+    flex-direction: column;
   }
 
   /* ── PAGINA 1: COVER ── */
@@ -145,7 +147,11 @@
     letter-spacing: 0.05em;
   }
   .page-content {
-    padding: 2rem 2.5rem 2rem;
+    padding: 2.25rem 2.5rem 6rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .page-nr {
     position: absolute;
@@ -170,7 +176,7 @@
     font-size: 28px;
     color: var(--blauw);
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   .section-title span { color: var(--magenta); }
   .body-text {
@@ -184,7 +190,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
   }
   .stat-card {
     background: var(--blauw);
@@ -211,7 +217,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: 1.25rem 0;
+    margin: 1.75rem 0;
   }
   .prob-card {
     background: var(--roze);
@@ -246,8 +252,8 @@
   .quote-blok {
     background: var(--blauw);
     border-radius: 12px;
-    padding: 1.5rem 1.75rem;
-    margin: 1.25rem 0;
+    padding: 1.75rem 1.75rem;
+    margin: 2rem 0;
     position: relative;
   }
   .quote-mark {
@@ -281,8 +287,8 @@
     background: var(--lichtgrijs);
     border-left: 4px solid var(--magenta);
     border-radius: 0 10px 10px 0;
-    padding: 1.25rem 1.5rem;
-    margin: 1.25rem 0;
+    padding: 1.4rem 1.5rem;
+    margin: 1.75rem 0;
   }
   .definitie-blok p {
     font-size: 13.5px;
@@ -292,12 +298,12 @@
   .definitie-blok strong { color: var(--magenta); }
 
   /* ── FUNCTIES ── */
-  .functie-list { margin: 1.25rem 0; }
+  .functie-list { margin: 1.5rem 0; }
   .functie-item {
     display: grid;
     grid-template-columns: 48px 1fr;
     gap: 1rem;
-    padding: 0.85rem 0;
+    padding: 1.1rem 0;
     border-bottom: 0.5px solid #e8eef7;
     align-items: start;
   }
@@ -364,7 +370,7 @@
     align-items: center;
     justify-content: center;
     gap: 0;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     flex-wrap: nowrap;
   }
   .vw-stap {
@@ -470,7 +476,7 @@
   .divider {
     height: 2px;
     background: linear-gradient(to right, var(--magenta), transparent);
-    margin: 1rem 0;
+    margin: 1.75rem 0;
     border: none;
   }
 
@@ -479,7 +485,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
   }
 
   @media print {
@@ -599,7 +605,7 @@
 
     <p class="section-eyebrow" style="margin-top: 1rem;">Het gevolg</p>
 
-    <div class="two-col">
+    <div class="two-col" style="margin-top: -0.5rem;">
       <div>
         <p class="body-text"><strong style="color: var(--blauw);">Voor bedrijven:</strong> subsidies blijven liggen, instroom mislukt, faalkosten stijgen. De motivatie om het opnieuw te proberen daalt.</p>
       </div>
