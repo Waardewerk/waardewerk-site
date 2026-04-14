@@ -95,39 +95,6 @@ export default function DienstenPage() {
         {/* ── Sociale ontwikkeling ─────────────────────────────────────────── */}
         {activeTab === 'sociaal' && (
           <>
-            {/* Pagina-links */}
-            <section className="py-10 px-6 bg-white border-b border-lijn">
-              <div className="max-w-3xl mx-auto">
-                <p className="eyebrow mb-4">Sociale zaken</p>
-                <div className="flex flex-col gap-3">
-                  <a
-                    href="/two_page.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between bg-white border border-lijn hover:border-magenta rounded-2xl px-5 py-4 transition-colors group"
-                  >
-                    <div>
-                      <div className="font-medium text-blauw group-hover:text-magenta transition-colors">TWO — De Tewerkstellingsorganisatie</div>
-                      <div className="text-xs text-grijs mt-0.5">Regionale uitvoeringsorganisatie voor instroom, begeleiding en subsidiëring</div>
-                    </div>
-                    <span className="text-grijs group-hover:text-magenta transition-colors text-lg">↗</span>
-                  </a>
-                  <a
-                    href="/sroi_page.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between bg-white border border-lijn hover:border-magenta rounded-2xl px-5 py-4 transition-colors group"
-                  >
-                    <div>
-                      <div className="font-medium text-blauw group-hover:text-magenta transition-colors">SROI — Social Return on Investment</div>
-                      <div className="text-xs text-grijs mt-0.5">Inzicht in SROI-beleid en -uitvoering per gemeente</div>
-                    </div>
-                    <span className="text-grijs group-hover:text-magenta transition-colors text-lg">↗</span>
-                  </a>
-                </div>
-              </div>
-            </section>
-
             {/* Win-cards */}
             <section className="py-16 px-6 bg-white">
               <div className="max-w-3xl mx-auto">
