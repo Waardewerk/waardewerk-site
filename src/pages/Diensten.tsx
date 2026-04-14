@@ -5,26 +5,6 @@ import ContactModal from '../components/ContactModal';
 
 type FormState = 'idle' | 'sending' | 'sent' | 'error';
 
-const stappen = [
-  { n: '01', titel: 'Richten', sub: 'Intake, analyse en onderbouwd besluit', bullets: [
-    'We brengen jouw vraagstuk in kaart en analyseren de markt en kansen',
-    'We adviseren strategisch over de inzet van een TWO als oplossingsrichting',
-    'We maken een grove businesscase zodat jij een onderbouwd besluit kunt nemen',
-  ]},
-  { n: '02', titel: 'Inrichten', sub: 'Ontwerp en businessplan', bullets: [
-    'Businessplan opstellen met waardepropositie, kostenstructuur en inkomstenstromen',
-    'Governance, rechtsvorm, samenwerkingspartners en funding concretiseren',
-    "KPI's en dashboard inrichten zodat impact meetbaar wordt",
-  ]},
-  { n: '03', titel: 'Verrichten', sub: 'Kwartiermaken en implementatie', bullets: [
-    'We maken kwartier: de eerste stappen worden gezet met ons aan je zijde',
-    'Stapsgewijze implementatie: voordoen → samen doen → jij doet het zelf',
-  ]},
-  { n: '04', titel: 'Monitoren', sub: 'Borging en doorontwikkeling', bullets: [
-    'Vinger aan de pols: mentoring en borging van de dienstverlening',
-    'Meten, rapporteren en het ontwerp waar nodig aanpassen',
-  ]},
-];
 
 const bulletpoints = [
   'Hoe je als werkgever eigenaarschap neemt over SROI',
@@ -123,35 +103,6 @@ export default function DienstenPage() {
                       <div className="text-3xl font-bold text-magenta mb-1">{w.n}</div>
                       <div className="font-medium text-blauw text-sm mb-2">{w.l}</div>
                       <div className="text-xs text-grijs leading-relaxed">{w.sub}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Vijf stappen */}
-            <section className="py-16 px-6 bg-bg-alt">
-              <div className="max-w-3xl mx-auto">
-                <p className="eyebrow mb-3">Aanpak</p>
-                <h2 className="text-2xl font-medium text-blauw mb-8">Hoe werkt het?</h2>
-                <div className="flex flex-col gap-4">
-                  {stappen.map((s) => (
-                    <div key={s.n} className="bg-white border border-lijn rounded-2xl p-5 flex gap-5 items-start">
-                      <div className="w-10 h-10 rounded-xl bg-magenta flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                        {s.n}
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-medium text-blauw mb-0.5">{s.titel}</div>
-                        <div className="text-xs text-grijs mb-2">{s.sub}</div>
-                        <ul className="flex flex-col gap-1">
-                          {s.bullets.map((b, i) => (
-                            <li key={i} className="flex gap-2 text-sm text-grijs leading-relaxed">
-                              <span className="w-1.5 h-1.5 rounded-full bg-magenta flex-shrink-0 mt-2" />
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
                     </div>
                   ))}
                 </div>

@@ -98,7 +98,7 @@ export default function TWO() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
               {
-                nr: '1', kleur: '#1D9E75', titel: 'Richten', sub: 'Intake, analyse en onderbouwd besluit',
+                nr: '1', kleur: '#C4006A', titel: 'Richten', sub: 'Intake, analyse en onderbouwd besluit',
                 bullets: [
                   'We brengen jouw vraagstuk in kaart en analyseren de markt en kansen',
                   'We adviseren strategisch over de inzet van een TWO als oplossingsrichting',
@@ -106,7 +106,7 @@ export default function TWO() {
                 ],
               },
               {
-                nr: '2', kleur: '#7F77DD', titel: 'Inrichten', sub: 'Ontwerp en businessplan',
+                nr: '2', kleur: '#1a2e45', titel: 'Inrichten', sub: 'Ontwerp en businessplan',
                 bullets: [
                   'Businessplan opstellen met waardepropositie, kostenstructuur en inkomstenstromen',
                   'Governance, rechtsvorm, samenwerkingspartners en funding concretiseren',
@@ -114,14 +114,14 @@ export default function TWO() {
                 ],
               },
               {
-                nr: '3', kleur: '#D4537E', titel: 'Verrichten', sub: 'Kwartiermaken en implementatie',
+                nr: '3', kleur: '#C4006A', titel: 'Verrichten', sub: 'Kwartiermaken en implementatie',
                 bullets: [
                   'We maken kwartier: de eerste stappen worden gezet met ons aan je zijde',
                   'Stapsgewijze implementatie: voordoen → samen doen → jij doet het zelf',
                 ],
               },
               {
-                nr: '4', kleur: '#378ADD', titel: 'Monitoren', sub: 'Borging en doorontwikkeling',
+                nr: '4', kleur: '#1a2e45', titel: 'Monitoren', sub: 'Borging en doorontwikkeling',
                 bullets: [
                   'Vinger aan de pols: mentoring en borging van de dienstverlening',
                   'Meten, rapporteren en het ontwerp waar nodig aanpassen',
