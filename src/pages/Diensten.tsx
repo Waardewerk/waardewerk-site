@@ -253,7 +253,7 @@ export default function DienstenPage() {
                       </div>
                       <div className="flex flex-wrap gap-3">
                         <a
-                          href="/whitepaper.pdf"
+                          href="/Whitepaper.pdf"
                           download
                           className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
                         >
