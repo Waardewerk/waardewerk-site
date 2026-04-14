@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TWO — Waardewerk</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blauw: #1B3A6B;
+    --blauw-mid: #2a4f8f;
+    --magenta: #C2185B;
+    --roze: #fce4ec;
+    --roze-mid: #f8bbd0;
+    --wit: #ffffff;
+    --lichtgrijs: #f7f8fc;
+    --tekst: #1B3A6B;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e8e8e8;
+    margin: 0;
+    padding: 2rem;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--wit);
+    margin: 0 auto 3rem;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── PAGINA 1: COVER ── */
+  .cover {
+    background: var(--blauw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .cover-top {
+    padding: 3rem 3rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--magenta);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    line-height: 1.0;
+    color: var(--wit);
+    margin-bottom: 1rem;
+  }
+  .cover-title span { color: var(--magenta); }
+  .cover-sub {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    line-height: 1.4;
+  }
+  .cover-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    max-width: 420px;
+    border-left: 3px solid var(--magenta);
+    padding-left: 1.25rem;
+  }
+  .cover-bottom {
+    background: var(--magenta);
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cover-bottom-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .cover-bottom-brand {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wit);
+    letter-spacing: 0.05em;
+  }
+  .cover-decoration {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    border: 60px solid rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .cover-decoration2 {
+    position: absolute;
+    right: 40px;
+    top: 30%;
+    width: 180px;
+    height: 180px;
+    border: 40px solid rgba(194,24,91,0.15);
+    border-radius: 50%;
+  }
+
+  /* ── PAGINA HEADER ── */
+  .page-header {
+    background: var(--blauw);
+    padding: 0 0 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    overflow: hidden;
+  }
+  .page-header-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .page-header-brand {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--magenta);
+    letter-spacing: 0.05em;
+  }
+  .page-content {
+    padding: 2.25rem 2.5rem 6rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .page-nr {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2.5rem;
+    font-size: 11px;
+    color: #bbb;
+    font-weight: 500;
+  }
+
+  /* ── SECTIES ── */
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--magenta);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--blauw);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
+  .section-title span { color: var(--magenta); }
+  .body-text {
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.75;
+  }
+
+  /* ── STAT BLOKKEN ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 2rem 0;
+  }
+  .stat-card {
+    background: var(--blauw);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--wit);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-number span { color: var(--magenta); }
+  .stat-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+
+  /* ── PROBLEEM KAARTEN ── */
+  .prob-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 1.75rem 0;
+  }
+  .prob-card {
+    background: var(--roze);
+    border-radius: 10px;
+    padding: 1.1rem 1rem;
+    border-top: 3px solid var(--magenta);
+  }
+  .prob-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--magenta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+  }
+  .prob-icon svg { width: 16px; height: 16px; }
+  .prob-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blauw);
+    margin-bottom: 0.35rem;
+  }
+  .prob-body {
+    font-size: 11.5px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* ── QUOTE ── */
+  .quote-blok {
+    background: var(--blauw);
+    border-radius: 12px;
+    padding: 1.75rem 1.75rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 80px;
+    color: rgba(255,255,255,0.08);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+  }
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--wit);
+    font-style: italic;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.75rem;
+  }
+  .quote-source {
+    font-size: 11px;
+    color: var(--magenta);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── DEFINITIE ── */
+  .definitie-blok {
+    background: var(--lichtgrijs);
+    border-left: 4px solid var(--magenta);
+    border-radius: 0 10px 10px 0;
+    padding: 1.4rem 1.5rem;
+    margin: 1.75rem 0;
+  }
+  .definitie-blok p {
+    font-size: 13.5px;
+    color: var(--blauw);
+    line-height: 1.75;
+  }
+  .definitie-blok strong { color: var(--magenta); }
+
+  /* ── FUNCTIES ── */
+  .functie-list { margin: 1.5rem 0; }
+  .functie-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 0.5px solid #e8eef7;
+    align-items: start;
+  }
+  .functie-item:last-child { border-bottom: none; }
+  .functie-nr {
+    width: 40px;
+    height: 40px;
+    background: var(--magenta);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--wit);
+    flex-shrink: 0;
+  }
+  .functie-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blauw);
+    margin-bottom: 0.2rem;
+  }
+  .functie-body {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* ── ONDERSCHEIDEND ── */
+  .ond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 1.25rem 0;
+  }
+  .ond-card {
+    background: var(--blauw);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+  }
+  .ond-nr {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: rgba(255,255,255,0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .ond-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--wit);
+    margin-bottom: 0.4rem;
+  }
+  .ond-body {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── VLIEGWIEL ── */
+  .vliegwiel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 2rem 0;
+    flex-wrap: nowrap;
+  }
+  .vw-stap {
+    background: var(--roze);
+    border-radius: 10px;
+    padding: 0.9rem 0.7rem;
+    text-align: center;
+    width: 90px;
+    flex-shrink: 0;
+  }
+  .vw-stap.active { background: var(--magenta); }
+  .vw-stap.active .vw-label { color: var(--wit); }
+  .vw-stap.active .vw-sub { color: rgba(255,255,255,0.7); }
+  .vw-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blauw);
+    line-height: 1.3;
+  }
+  .vw-sub {
+    font-size: 9.5px;
+    color: #888;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .vw-pijl {
+    font-size: 18px;
+    color: var(--magenta);
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA PAGINA ── */
+  .cta-page {
+    background: var(--blauw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 3rem;
+    min-height: 297mm;
+  }
+  .cta-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--magenta);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .cta-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: var(--wit);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    max-width: 400px;
+  }
+  .cta-title span { color: var(--magenta); }
+  .cta-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+    max-width: 360px;
+    margin-bottom: 2.5rem;
+  }
+  .cta-contact {
+    background: var(--magenta);
+    color: var(--wit);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  .cta-url {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+  }
+  .cta-deco {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 80px solid rgba(255,255,255,0.03);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
+  }
+  .cta-deco2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 40px solid rgba(194,24,91,0.12);
+    border-radius: 50%;
+    top: 60px;
+    left: -60px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--magenta), transparent);
+    margin: 1.75rem 0;
+    border: none;
+  }
+
+  /* ── TWEE KOLOMMEN ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ PAGINA 1: COVER ═══ -->
+<div class="page cover">
+  <div class="cover-decoration"></div>
+  <div class="cover-decoration2"></div>
+  <div class="cover-top">
+    <p class="cover-eyebrow">Waardewerk — Sociale innovatie</p>
+    <h1 class="cover-title">TWO<br><span>werkt.</span></h1>
+    <p class="cover-sub">De Tewerkstellings&shy;organisatie als systeemdoorbraak</p>
+    <p class="cover-desc">Waarom de arbeidsmarkt vastloopt, wie de regie pakt en hoe de TWO de verbinding maakt tussen werkvloer en sociaal domein.</p>
+  </div>
+  <div class="cover-bottom">
+    <span class="cover-bottom-text">Uri Breman — 2026</span>
+  </div>
+</div>
+
+<!-- ═══ PAGINA 2: DE URGENTIE ═══ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-header-label">De urgentie</span></div>
+  <div class="page-content">
+
+    <p class="section-eyebrow">Arbeidsmarkt</p>
+    <h2 class="section-title">De bouwsector heeft<br><span>een structureel probleem.</span></h2>
+    <p class="body-text">Vergrijzing, uitstroom en grote maatschappelijke opgaven zorgen voor een personeelstekort dat alleen maar groeit. Tegelijk staat een enorm arbeidspotentieel aan de kant.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">60<span>k</span></div>
+        <div class="stat-label">nieuwe arbeidskrachten nodig 2024–2028</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10<span>k</span></div>
+        <div class="stat-label">vakmensen stromen jaarlijks uit door pensionering</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">25<span>%</span></div>
+        <div class="stat-label">van het bouwpersoneel is 55 jaar of ouder</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-eyebrow" style="margin-top: 1rem;">Onbenut potentieel</p>
+    <p class="body-text" style="margin-bottom: 1rem;">Deze groepen staan klaar, maar worden niet bereikt:</p>
+
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="prob-title">Statushouders</div>
+        <div class="prob-body">Vaak technische ervaring, belemmerd door taal en diplomadenken.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-title">Jongeren zonder diploma</div>
+        <div class="prob-body">Gemotiveerd, maar zonder toegang tot praktijkgerichte leerpaden.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-title">Working poor</div>
+        <div class="prob-body">Vastzitten in instapfuncties zonder perspectief of doorstroom.</div>
+      </div>
+    </div>
+
+    <div class="quote-blok">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">De mismatch tussen hun potentieel en de eisen van de arbeidsmarkt leidt tot uitsluiting, onderbenutting en frustratie — bij werkgevers én bij de mensen zelf.</p>
+      <p class="quote-source">— Whitepaper Regie & Eigenaarschap bij de Werkgever</p>
+    </div>
+
+  </div>
+  <img src="Waardewerk-logo.png" style="position:absolute;bottom:1.25rem;left:2.5rem;height:60px;width:auto;object-fit:contain;opacity:0.7;" alt="Waardewerk">
+  <span class="page-nr">2</span>
+</div>
+
+<!-- ═══ PAGINA 3: WAAROM HET VASTLOOPT ═══ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-header-label">Waarom het vastloopt</span></div>
+  <div class="page-content">
+
+    <p class="section-eyebrow">Het systeem</p>
+    <h2 class="section-title">Goede bedoelingen.<br><span>Niemand die het regelt.</span></h2>
+    <p class="body-text">Gemeenten verwijzen. Opleiders onderwijzen. Werkgevers produceren. Maar niemand borgt. Drie structurele oorzaken:</p>
+
+    <div class="prob-grid" style="margin-top: 1.25rem;">
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v6l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="6" stroke="white" stroke-width="1.5"/></svg>
+        </div>
+        <div class="prob-title">Te weinig tijd</div>
+        <div class="prob-body">Een aannemer of mkb'er heeft geen HR-afdeling die subsidies bijhoudt, begeleiding organiseert en rapportages oplevert naast het gewone werk.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l6 6-6 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="prob-title">Onduidelijke regels</div>
+        <div class="prob-body">SROI, SLIM, O&O-fondsen — elke gemeente hanteert eigen criteria. Wat telt mee? Wat niet? Combineren lukt alleen als je het systeem kent.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="5" cy="5" r="3" stroke="white" stroke-width="1.5"/><circle cx="11" cy="11" r="3" stroke="white" stroke-width="1.5"/><path d="M8 8l1-1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="prob-title">Versnipperd systeem</div>
+        <div class="prob-body">Gemeenten, UWV, opleiders en sectorfondsen werken langs elkaar heen. Er is geen integrale regie op instroom, begeleiding en behoud.</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-eyebrow" style="margin-top: 1rem;">Het gevolg</p>
+
+    <div class="two-col" style="margin-top: -0.5rem;">
+      <div>
+        <p class="body-text"><strong style="color: var(--blauw);">Voor bedrijven:</strong> subsidies blijven liggen, instroom mislukt, faalkosten stijgen. De motivatie om het opnieuw te proberen daalt.</p>
+      </div>
+      <div>
+        <p class="body-text"><strong style="color: var(--blauw);">Voor mensen:</strong> ze komen niet aan het werk ondanks hun potentieel. Het systeem houdt hen buiten, terwijl de vraag er wel is.</p>
+      </div>
+    </div>
+
+    <div class="definitie-blok" style="margin-top: 1rem;">
+      <p>De oplossing is niet nóg een instrument. Het is <strong>eigenaarschap</strong>: één partij die de regie neemt, de verbinding maakt en het afmaakt.</p>
+    </div>
+
+  </div>
+  <img src="Waardewerk-logo.png" style="position:absolute;bottom:1.25rem;left:2.5rem;height:60px;width:auto;object-fit:contain;opacity:0.7;" alt="Waardewerk">
+  <span class="page-nr">3</span>
+</div>
+
+<!-- ═══ PAGINA 4: DE TWO ═══ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-header-label">De oplossing</span></div>
+  <div class="page-content">
+
+    <p class="section-eyebrow">De TWO</p>
+    <h2 class="section-title">De Tewerkstellings&shy;organisatie</h2>
+
+    <div class="definitie-blok">
+      <p>De TWO is een bedrijf of samenwerkingsvorm die de regie voert over <strong>instroom, begeleiding en subsidiëring</strong> van personeel met een afstand tot de arbeidsmarkt. Praktisch uitvoerend, samenwerkend met de lokale overheid en gericht op duurzame instroom. Het eigenaarschap van de TWO en de uitvoering ligt waar het hoort, bij de ondernemers.</p>
+    </div>
+
+    <p class="section-eyebrow" style="margin-top: 1.25rem;">Vier functies</p>
+    <div class="functie-list">
+      <div class="functie-item">
+        <div class="functie-nr">1</div>
+        <div>
+          <div class="functie-title">Matchen op skills</div>
+          <div class="functie-body">Kandidaten worden gekoppeld op vaardigheden en motivatie — niet op diploma. Praktijkgerichte assessments, afgestemd op de context van het bedrijf.</div>
+        </div>
+      </div>
+      <div class="functie-item">
+        <div class="functie-nr">2</div>
+        <div>
+          <div class="functie-title">Begeleiding op de vloer</div>
+          <div class="functie-body">Jobcoaches en leermeesters worden professioneel en planmatig ingezet. Niet afhankelijk van toevallige bereidheid, maar structureel ingebed.</div>
+        </div>
+      </div>
+      <div class="functie-item">
+        <div class="functie-nr">3</div>
+        <div>
+          <div class="functie-title">Subsidies coördineren</div>
+          <div class="functie-body">SROI, SLIM en O&O-fondsen worden gecombineerd en aangevraagd. De drempel om te investeren in mensen wordt aanzienlijk verlaagd.</div>
+        </div>
+      </div>
+      <div class="functie-item">
+        <div class="functie-nr">4</div>
+        <div>
+          <div class="functie-title">Impact meten</div>
+          <div class="functie-body">Via KPI's en impactdashboards wordt zichtbaar hoeveel mensen instromen, hoelang zij blijven en wat de maatschappelijke opbrengst is.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-eyebrow" style="margin-top: 1rem;">Het vliegwiel</p>
+    <div class="vliegwiel">
+      <div class="vw-stap active">
+        <div class="vw-label">TWO plaatst</div>
+        <div class="vw-sub">instroom & begeleiding</div>
+      </div>
+      <div class="vw-pijl">→</div>
+      <div class="vw-stap">
+        <div class="vw-label">Mensen groeien</div>
+        <div class="vw-sub">doorstroom naar beter werk</div>
+      </div>
+      <div class="vw-pijl">→</div>
+      <div class="vw-stap">
+        <div class="vw-label">Ruimte onderaan</div>
+        <div class="vw-sub">nieuwe instroom mogelijk</div>
+      </div>
+      <div class="vw-pijl">→</div>
+      <div class="vw-stap">
+        <div class="vw-label">Sector versterkt</div>
+        <div class="vw-sub">vakmanschap geborgd</div>
+      </div>
+    </div>
+
+  </div>
+  <img src="Waardewerk-logo.png" style="position:absolute;bottom:1.25rem;left:2.5rem;height:60px;width:auto;object-fit:contain;opacity:0.7;" alt="Waardewerk">
+  <span class="page-nr">4</span>
+</div>
+
+<!-- ═══ PAGINA 5: CTA ═══ -->
+<div class="page cta-page">
+  <div class="cta-deco"></div>
+  <div class="cta-deco2"></div>
+  <p class="cta-eyebrow">Waardewerk — Sociale innovatie</p>
+  <h2 class="cta-title">Klaar om de <span>regie</span> te pakken?</h2>
+  <p class="cta-sub">Waardewerk begeleidt gemeenten, aannemers en sociale ondernemers bij het inrichten van een TWO — van eerste verkenning tot operationele uitvoering.</p>
+  <div class="cta-contact">Neem contact op</div>
+  <p class="cta-url">waardewerk.org · info@waardewerk.org</p>
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid rgba(255,255,255,0.15); text-align: center;">
+    <p style="font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase;">Gebaseerd op de whitepaper Regie &amp; Eigenaarschap bij de Werkgever — Uri Breman / Waardewerk 2026</p>
+  </div>
+</div>
+
+</body>
+</html>
