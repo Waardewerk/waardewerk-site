@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/two_page.html", "destination": "/two_page.html" },
+    { "source": "/sroi_page.html", "destination": "/sroi_page.html" },
+    { "source": "/((?!.*\\.html$).*)", "destination": "/index.html" }
+  ]
+}

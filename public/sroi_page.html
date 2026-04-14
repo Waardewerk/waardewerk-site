@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regie & Eigenaarschap — Waardewerk</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: #fff;
+    }
+
+    a { color: #C2185B; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid #e0e0e0;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img { height: 48px; width: auto; }
+    .nav-link {
+      font-size: 14px;
+      color: #1a1a2e;
+      font-weight: 500;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 0.5px solid #e0e0e0;
+    }
+    .hero-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #C2185B;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #1a1a2e;
+      margin-bottom: 1.1rem;
+    }
+    .hero-title span { color: #C2185B; }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #555;
+      max-width: 620px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 2.75rem 0;
+      border-bottom: 0.5px solid #e0e0e0;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .sec-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #C2185B;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .sec-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.6rem;
+    }
+    .sec-intro {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.65;
+      max-width: 620px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── WIN CARDS ── */
+    .win-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .win-card {
+      background: #fff;
+      border: 0.5px solid #e0e0e0;
+      border-top: 3px solid #C2185B;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .win-stat {
+      font-size: 26px;
+      font-weight: 500;
+      color: #C2185B;
+      margin-bottom: 0.3rem;
+    }
+    .win-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.4rem;
+    }
+    .win-body {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.1rem 0;
+      border-bottom: 0.5px solid #e0e0e0;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-size: 22px;
+      font-weight: 500;
+      color: #C2185B;
+      min-width: 36px;
+      padding-top: 1px;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.25rem;
+    }
+    .step-body {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ── DOELGROEP ── */
+    .dg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .dg-card {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+    }
+    .dg-tag {
+      display: inline-block;
+      background: #fce4ec;
+      color: #880e4f;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+    .dg-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.6rem;
+    }
+    .dg-list {
+      list-style: none;
+      padding: 0;
+    }
+    .dg-list li {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      padding: 3px 0 3px 1rem;
+      position: relative;
+    }
+    .dg-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #C2185B;
+    }
+
+    /* ── QUOTE ── */
+    .quote {
+      border-left: 3px solid #C2185B;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0 0;
+    }
+    .quote p {
+      font-size: 16px;
+      color: #1a1a2e;
+      line-height: 1.65;
+      font-style: italic;
+    }
+    .quote cite {
+      font-size: 13px;
+      color: #888;
+      margin-top: 0.4rem;
+      display: block;
+      font-style: normal;
+    }
+
+    /* ── DOWNLOAD ── */
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 0.5px solid #aaa;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #1a1a2e;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .dl-btn:hover {
+      background: #f5f5f5;
+      text-decoration: none;
+    }
+
+    /* ── CONTACT ── */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.6rem;
+    }
+    .contact-info p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #C2185B;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      text-decoration: none;
+    }
+    .contact-link:hover {
+      background: #a0144d;
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.5rem 0;
+      border-top: 0.5px solid #e0e0e0;
+      margin-top: 1rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 620px) {
+      .hero-title { font-size: 26px; }
+      .win-grid { grid-template-columns: 1fr; }
+      .dg-grid { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a class="logo" href="/">
+        <!-- Vervang src met het juiste pad naar het logo in jouw project -->
+        <img src="/Waardewerk-logo.png" alt="Waardewerk">
+      </a>
+      <a class="nav-link" href="/">← Terug naar waardewerk.org</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- HERO -->
+      <div class="hero">
+        <p class="hero-label">Waardewerk — arbeidsmarkt & sociale impact</p>
+        <h1 class="hero-title">De mensen zijn er.<br><span>De regie ontbreekt nog.</span></h1>
+        <p class="hero-sub">De bouwsector heeft een structureel personeelstekort. Tegelijk staat een groot arbeidspotentieel aan de zijlijn. Wij helpen aannemers en gemeenten om die verbinding te maken — met leermeesterschap, slimme subsidiestapeling en aantoonbare impact.</p>
+      </div>
+
+      <!-- QUICK WINS -->
+      <section>
+        <p class="sec-label">Waar de quick wins zitten</p>
+        <h2 class="sec-title">Drie hefbomen die direct resultaat geven</h2>
+        <p class="sec-intro">Geen nieuw beleid nodig. Deze aanpak werkt met wat er al is — en levert aantoonbaar rendement op voor zowel aannemers als gemeenten.</p>
+        <div class="win-grid">
+          <div class="win-card">
+            <div class="win-stat">20–40%</div>
+            <div class="win-title">Minder uitval bij nieuwe instroom</div>
+            <div class="win-body">Nieuwe medewerkers die worden begeleid door een leermeester vallen beduidend minder snel uit. De investering betaalt zich terug binnen drie maanden.</div>
+          </div>
+          <div class="win-card">
+            <div class="win-stat">2–3 jaar</div>
+            <div class="win-title">Oudere vakmensen langer inzetbaar</div>
+            <div class="win-body">Geef ervaren mensen een rol als leermeester: minder fysieke belasting, meer werkplezier. Ze blijven langer inzetbaar en dragen vakkennis over die anders verloren gaat.</div>
+          </div>
+          <div class="win-card">
+            <div class="win-stat">3×</div>
+            <div class="win-title">Meer rendement op SROI</div>
+            <div class="win-body">SROI, SLIM en O&O-fondsen zijn combineerbaar. De meeste aannemers benutten dit niet. Door te stapelen haal je drie keer zoveel waarde uit dezelfde verplichting.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOE HET WERKT -->
+      <section>
+        <p class="sec-label">Hoe het werkt</p>
+        <h2 class="sec-title">Van verplichting naar rendement</h2>
+        <p class="sec-intro">De aanpak is modulair en praktijkgestuurd. Jij levert de werkplek en de leermeester. Wij regelen matching, begeleiding, subsidies en rapportage.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div>
+              <div class="step-title">Intake op maat</div>
+              <div class="step-body">We brengen samen in kaart welke personeelsvraag je hebt, welke doelgroep het best past en wat er aan begeleiding nodig is. Geen aannames — we starten bij jouw situatie.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div>
+              <div class="step-title">Skillsgericht matchen</div>
+              <div class="step-body">We zoeken kandidaten op vaardigheden en motivatie, niet op diploma. Statushouders, jongeren, herintreders: groot potentieel dat nu aan de kant staat.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div>
+              <div class="step-title">Leermeester op de vloer</div>
+              <div class="step-body">Een ervaren vakman begeleidt de nieuwe instromer. Drie à vier uur per week. Lagere uitval, snellere productiviteit en kennisoverdracht die anders verloren gaat.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div>
+              <div class="step-title">Subsidies geregeld</div>
+              <div class="step-body">Wij combineren SROI, SLIM en O&O-fondsen en verzorgen de aanvraag en verantwoording. Jij tekent één keer.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div>
+              <div class="step-title">Impact zichtbaar maken</div>
+              <div class="step-body">Concrete cijfers over retentie, doorstroom en maatschappelijke waarde — bruikbaar voor de gemeente én voor de volgende aanbesteding.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VOOR WIE -->
+      <section>
+        <p class="sec-label">Voor wie</p>
+        <h2 class="sec-title">Eén aanpak, twee perspectieven</h2>
+        <p class="sec-intro">Of je nu een aannemer bent die mensen zoekt, of een gemeente die sociale impact wil aantonen — de belangen overlappen meer dan je denkt.</p>
+        <div class="dg-grid">
+          <div class="dg-card">
+            <span class="dg-tag">Aannemer</span>
+            <div class="dg-title">Jij zoekt continuïteit</div>
+            <ul class="dg-list">
+              <li>Vaste mensen die blijven</li>
+              <li>Minder uitval en faalkosten</li>
+              <li>Subsidies die je nu laat liggen</li>
+              <li>Sterkere positie bij de volgende gunning</li>
+              <li>Geen papierwerk — wij regelen dat</li>
+            </ul>
+          </div>
+          <div class="dg-card">
+            <span class="dg-tag">Gemeente / opdrachtgever</span>
+            <div class="dg-title">Jij wil aantoonbare impact</div>
+            <ul class="dg-list">
+              <li>SROI die verder gaat dan een vinkje</li>
+              <li>Doorstroom van werk naar beter werk</li>
+              <li>Ruimte voor nieuwe instroom onderaan</li>
+              <li>Meetbare sociale verheffing</li>
+              <li>Aannemers die eigenaarschap nemen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote">
+          <p>"Iedereen doet wat, maar niemand stemt af. Wij missen een centraal loket dat ons helpt met subsidies en begeleiding."</p>
+          <cite>— Directeur vastgoedonderhoud, uit de praktijk</cite>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section id="download">
+        <p class="sec-label">Verdieping</p>
+        <h2 class="sec-title">De volledige onderbouwing</h2>
+        <p class="sec-intro" style="margin-bottom: 1.25rem;">De whitepaper <em>Regie &amp; Eigenaarschap bij de Werkgever</em> legt uit waarom het systeem vastloopt en hoe een skillsgerichte aanpak met leermeesterschap en regionale samenwerking de doorbraak biedt.</p>
+        <!-- Vervang href met het juiste pad naar de whitepaper PDF -->
+        <a class="dl-btn" href="/Whitepaper.pdf" download>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1v9M5 7l3 3 3-3M2 12v2h12v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download whitepaper (PDF)
+        </a>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="contact-wrap">
+          <div class="contact-info">
+            <h3>Samen aan de slag?</h3>
+            <p>Of je nu een eerste gesprek wil of direct wil weten wat er mogelijk is binnen jouw gemeente of project — neem contact op. We reageren binnen twee werkdagen.</p>
+            <p>
+              Waardewerk — Let's Be Well BV<br>
+              Den Bosch<br>
+              <a href="mailto:info@waardewerk.org">info@waardewerk.org</a>
+            </p>
+            <!-- Vervang href met het juiste contactpagina-pad of mailto -->
+            <a class="contact-link" href="mailto:info@waardewerk.org">Stuur een bericht</a>
+          </div>
+          <div>
+            <p style="font-size: 14px; color: #888; line-height: 1.65; padding-top: 2.5rem;">
+              Liever bellen? Dat kan ook.<br>
+              We zijn bereikbaar via het e-mailadres hierboven om een moment af te stemmen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2025 Waardewerk</span>
+        <span>KvK 95443088</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
