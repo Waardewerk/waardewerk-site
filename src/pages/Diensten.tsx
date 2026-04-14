@@ -251,16 +251,28 @@ export default function DienstenPage() {
                         <p className="font-medium text-blauw mb-1">Aanvraag ontvangen!</p>
                         <p className="text-sm text-grijs mb-4">We sturen je het whitepaper zo snel mogelijk toe.</p>
                       </div>
-                      <a
-                        href="/whitepaper.pdf"
-                        download
-                        className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download whitepaper
-                      </a>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="/whitepaper.pdf"
+                          download
+                          className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          </svg>
+                          Download whitepaper
+                        </a>
+                        <a
+                          href="/two_infographic.pdf"
+                          download
+                          className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          </svg>
+                          Download infographic
+                        </a>
+                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleWhitepaperSubmit} className="flex flex-col gap-3">
