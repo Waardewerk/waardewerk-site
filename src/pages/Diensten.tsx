@@ -6,11 +6,24 @@ import ContactModal from '../components/ContactModal';
 type FormState = 'idle' | 'sending' | 'sent' | 'error';
 
 const stappen = [
-  { n: '01', titel: 'Intake op maat', sub: 'We brengen de situatie en wensen van werkgever én kandidaat in kaart.' },
-  { n: '02', titel: 'Skillsgericht matchen', sub: 'We zoeken op competenties, niet alleen op papier.' },
-  { n: '03', titel: 'Leermeester op de vloer', sub: 'Een ervaren collega begeleidt de nieuwe medewerker in de praktijk.' },
-  { n: '04', titel: 'Subsidies geregeld', sub: 'We ontzorgen volledig: van loonkostensubsidie tot SROI-registratie.' },
-  { n: '05', titel: 'Impact zichtbaar maken', sub: 'Rapportage voor opdrachtgever én gemeente, zodat resultaat meetbaar is.' },
+  { n: '01', titel: 'Richten', sub: 'Intake, analyse en onderbouwd besluit', bullets: [
+    'We brengen jouw vraagstuk in kaart en analyseren de markt en kansen',
+    'We adviseren strategisch over de inzet van een TWO als oplossingsrichting',
+    'We maken een grove businesscase zodat jij een onderbouwd besluit kunt nemen',
+  ]},
+  { n: '02', titel: 'Inrichten', sub: 'Ontwerp en businessplan', bullets: [
+    'Businessplan opstellen met waardepropositie, kostenstructuur en inkomstenstromen',
+    'Governance, rechtsvorm, samenwerkingspartners en funding concretiseren',
+    "KPI's en dashboard inrichten zodat impact meetbaar wordt",
+  ]},
+  { n: '03', titel: 'Verrichten', sub: 'Kwartiermaken en implementatie', bullets: [
+    'We maken kwartier: de eerste stappen worden gezet met ons aan je zijde',
+    'Stapsgewijze implementatie: voordoen → samen doen → jij doet het zelf',
+  ]},
+  { n: '04', titel: 'Monitoren', sub: 'Borging en doorontwikkeling', bullets: [
+    'Vinger aan de pols: mentoring en borging van de dienstverlening',
+    'Meten, rapporteren en het ontwerp waar nodig aanpassen',
+  ]},
 ];
 
 const bulletpoints = [
@@ -127,9 +140,17 @@ export default function DienstenPage() {
                       <div className="w-10 h-10 rounded-xl bg-magenta flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                         {s.n}
                       </div>
-                      <div>
-                        <div className="font-medium text-blauw mb-1">{s.titel}</div>
-                        <div className="text-sm text-grijs leading-relaxed">{s.sub}</div>
+                      <div className="flex-1">
+                        <div className="font-medium text-blauw mb-0.5">{s.titel}</div>
+                        <div className="text-xs text-grijs mb-2">{s.sub}</div>
+                        <ul className="flex flex-col gap-1">
+                          {s.bullets.map((b, i) => (
+                            <li key={i} className="flex gap-2 text-sm text-grijs leading-relaxed">
+                              <span className="w-1.5 h-1.5 rounded-full bg-magenta flex-shrink-0 mt-2" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   ))}
