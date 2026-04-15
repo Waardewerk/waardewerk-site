@@ -59,16 +59,18 @@ export default function DienstenPage() {
 
       <main>
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
-        <section className="py-24 px-6" style={{ backgroundImage: 'url(/linkedin-banner.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(26, 46, 69, 0.85)' }} />
-          <div className="max-w-3xl mx-auto text-center" style={{ position: 'relative' }}>
-            <p className="eyebrow mb-4" style={{ color: '#F9A8D4' }}>Diensten</p>
-            <h1 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6">
-              De mensen zijn er.<br />De regie ontbreekt nog.
-            </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-xl mx-auto">
-              De bouwsector kampt met structureel personeelstekort. Tegelijk staan tienduizenden mensen aan de kant. Waardewerk brengt beide werelden samen — met structuur, begeleiding en meetbare impact.
-            </p>
+        <section>
+          <div className="py-24 px-6" style={{ backgroundImage: "url('/linkedin-banner.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
+            <div style={{ background: 'rgba(26, 46, 69, 0.82)', position: 'absolute', inset: 0 }} />
+            <div className="max-w-3xl mx-auto text-center" style={{ position: 'relative' }}>
+              <p className="eyebrow mb-4" style={{ color: '#F9A8D4' }}>Diensten</p>
+              <h1 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6">
+                De mensen zijn er.<br />De regie ontbreekt nog.
+              </h1>
+              <p className="text-white/70 text-lg leading-relaxed max-w-xl mx-auto">
+                De bouwsector kampt met structureel personeelstekort. Tegelijk staan tienduizenden mensen aan de kant. Waardewerk brengt beide werelden samen — met structuur, begeleiding en meetbare impact.
+              </p>
+            </div>
           </div>
         </section>
 
