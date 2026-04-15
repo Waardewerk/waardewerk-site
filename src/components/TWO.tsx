@@ -101,69 +101,6 @@ export default function TWO() {
           </div>
         </div>
 
-        {/* AANPAK */}
-        <div style={{ paddingBottom: '2.75rem', borderBottom: '0.5px solid #e2e8f0', marginBottom: '2.75rem' }}>
-          <p style={{ fontSize: 11, fontWeight: 500, color: '#C2185B', letterSpacing: '0.09em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Aanpak</p>
-          <h3 style={{ fontSize: 22, fontWeight: 600, color: '#1B3A6B', marginBottom: '0.6rem' }}>Een TWO opzetten in vier stappen</h3>
-          <p style={{ fontSize: 15, color: '#4a5568', lineHeight: 1.7, maxWidth: 620, marginBottom: '2rem' }}>
-            Waardewerk begeleidt jouw organisatie van eerste oriëntatie tot werkende tewerkstellingsorganisatie. We werken stapsgewijs, met jou als beslisser op elk moment.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            {[
-              {
-                nr: '1', kleur: '#C4006A', titel: 'Richten', sub: 'Intake, analyse en onderbouwd besluit',
-                bullets: [
-                  'We brengen jouw vraagstuk in kaart en analyseren de markt en kansen',
-                  'We adviseren strategisch over de inzet van een TWO als oplossingsrichting',
-                  'We maken een grove businesscase zodat jij een onderbouwd besluit kunt nemen',
-                ],
-              },
-              {
-                nr: '2', kleur: '#1a2e45', titel: 'Inrichten', sub: 'Ontwerp en businessplan',
-                bullets: [
-                  'Businessplan opstellen met waardepropositie, kostenstructuur en inkomstenstromen',
-                  'Governance, rechtsvorm, samenwerkingspartners en funding concretiseren',
-                  'KPI\'s en dashboard inrichten zodat impact meetbaar wordt',
-                ],
-              },
-              {
-                nr: '3', kleur: '#C4006A', titel: 'Verrichten', sub: 'Kwartiermaken en implementatie',
-                bullets: [
-                  'We maken kwartier: de eerste stappen worden gezet met ons aan je zijde',
-                  'Stapsgewijze implementatie: voordoen → samen doen → jij doet het zelf',
-                ],
-              },
-              {
-                nr: '4', kleur: '#1a2e45', titel: 'Monitoren', sub: 'Borging en doorontwikkeling',
-                bullets: [
-                  'Vinger aan de pols: mentoring en borging van de dienstverlening',
-                  'Meten, rapporteren en het ontwerp waar nodig aanpassen',
-                ],
-              },
-            ].map(f => (
-              <div key={f.nr} style={{ background: '#f7f8fc', borderRadius: 14, padding: '1.5rem', borderTop: `4px solid ${f.kleur}` }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: f.kleur, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontSize: 15, fontWeight: 700, color: '#fff' }}>{f.nr}</span>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: '#1B3A6B' }}>{f.titel}</div>
-                    <div style={{ fontSize: 12, color: '#6b7280', marginTop: 1 }}>{f.sub}</div>
-                  </div>
-                </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {f.bullets.map((b, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: 13, color: '#4a5568', lineHeight: 1.6 }}>
-                      <span style={{ width: 7, height: 7, borderRadius: '50%', background: f.kleur, flexShrink: 0, marginTop: 5 }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* CTA */}
         <div style={{ background: '#1B3A6B', borderRadius: 16, padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr auto', gap: '2rem', alignItems: 'center' }}>
           <div>
