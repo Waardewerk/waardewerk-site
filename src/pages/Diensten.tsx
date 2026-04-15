@@ -61,7 +61,7 @@ export default function DienstenPage() {
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
         <section>
           <div className="py-24 px-6" style={{ backgroundImage: "url('/linkedin-banner.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
-            <div style={{ background: 'rgba(26, 46, 69, 0.82)', position: 'absolute', inset: 0 }} />
+            <div style={{ background: 'rgba(26, 46, 69, 0.55)', position: 'absolute', inset: 0 }} />
             <div className="max-w-3xl mx-auto text-center" style={{ position: 'relative' }}>
               <p className="eyebrow mb-4" style={{ color: '#F9A8D4' }}>Diensten</p>
               <h1 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6">
