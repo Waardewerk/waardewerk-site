@@ -83,29 +83,26 @@ export default function DienstenPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <div className="font-medium text-blauw">Sociale ontwikkeling</div>
+              <div className="font-medium text-blauw">Sociale innovatie</div>
               <div className="text-xs text-grijs mt-1">Mensen aan het werk via SROI</div>
             </button>
 
             <button
               onClick={() => setActiveTab('tech')}
-              className={`rounded-2xl p-6 text-left transition-all border-2 relative ${activeTab === 'tech' ? 'border-[#185FA5] bg-blue-50' : 'border-lijn bg-white hover:border-[#185FA5]/30'}`}
+              className={`rounded-2xl p-6 text-left transition-all border-2 ${activeTab === 'tech' ? 'border-[#185FA5] bg-blue-50' : 'border-lijn bg-white hover:border-[#185FA5]/30'}`}
             >
-              <span className="absolute top-3 right-3 bg-[#185FA5]/10 text-[#185FA5] text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                Volgt binnenkort
-              </span>
               <div className="w-8 h-8 rounded-xl bg-[#185FA5] flex items-center justify-center mb-3">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
                 </svg>
               </div>
-              <div className="font-medium text-blauw">Technologische ontwikkeling</div>
-              <div className="text-xs text-grijs mt-1">Slimme tools voor werkgevers</div>
+              <div className="font-medium text-blauw">Technologische innovatie</div>
+              <div className="text-xs text-grijs mt-1">Robotica & AI voor werkgevers</div>
             </button>
           </div>
         </section>
 
-        {/* ── Sociale ontwikkeling ─────────────────────────────────────────── */}
+        {/* ── Sociale innovatie ─────────────────────────────────────────── */}
         {activeTab === 'sociaal' && (
           <>
             {/* Win-cards */}
@@ -359,24 +356,96 @@ export default function DienstenPage() {
           </>
         )}
 
-        {/* ── Technologische ontwikkeling placeholder ──────────────────────── */}
+        {/* ── Technologische innovatie ──────────────────────────────────── */}
         {activeTab === 'tech' && (
-          <section className="py-24 px-6 bg-blue-50">
-            <div className="max-w-xl mx-auto text-center">
-              <div className="w-16 h-16 rounded-2xl bg-[#185FA5]/10 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-[#185FA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
+          <>
+            {/* Robotica */}
+            <section className="py-16 px-6 bg-white">
+              <div className="max-w-3xl mx-auto">
+                <p className="eyebrow mb-3">Robotica</p>
+                <h2 className="text-2xl font-medium text-blauw mb-6">Zwaar werk slimmer organiseren</h2>
+                <p className="text-grijs leading-relaxed">
+                  In de bouwsector en zeker in de infra is personeel schaars en zwaar werk steeds lastiger in te vullen. Grote machines passen niet overal en je moet toch door. Robotiseren biedt een praktische uitweg — en de techniek is toegankelijker dan je denkt. Waar begin je? Wat past bij jouw bedrijf? Waardewerk helpt je de juiste vragen te stellen, tot de kern van je uitdaging te komen en tot een oplossing met een gedegen businesscase.
+                </p>
               </div>
-              <h2 className="text-2xl font-medium text-blauw mb-3">Technologische ontwikkeling</h2>
-              <p className="text-grijs leading-relaxed mb-6">
-                We werken aan slimme tools voor werkgevers die technologie willen inzetten om hun sociale impact te vergroten. Van matching-algoritmen tot rapportage-dashboards.
-              </p>
-              <span className="inline-block bg-[#185FA5]/10 text-[#185FA5] text-sm font-semibold px-4 py-2 rounded-full">
-                Volgt binnenkort
-              </span>
-            </div>
-          </section>
+            </section>
+
+            {/* AI */}
+            <section className="py-16 px-6 bg-bg-alt border-t border-lijn">
+              <div className="max-w-3xl mx-auto">
+                <p className="eyebrow mb-3">Artificiële Intelligentie</p>
+                <h2 className="text-2xl font-medium text-blauw mb-6">Van kenniswerk naar automatisering</h2>
+                <p className="text-grijs leading-relaxed">
+                  De technologische ontwikkeling gaat razendsnel en AI maakt kennis en automatisering steeds toegankelijker en goedkoper. Wat gebeurt er in je bedrijf als je met een AI-agent de taken van een kantoormedewerker volledig kunt automatiseren — 24/7, tegen een fractie van de kosten? Dat vraagt om keuzes: operationeel, tactisch en strategisch. Waardewerk ondersteunt je daarin. Want één ding is zeker: wie nieuwe technologie omarmt, blijft toekomstbestendig.
+                </p>
+              </div>
+            </section>
+
+            {/* Aanpak technologie */}
+            <section className="py-16 px-6 bg-white border-t border-lijn">
+              <div className="max-w-3xl mx-auto">
+                <p className="eyebrow mb-3">Aanpak</p>
+                <h2 className="text-2xl font-medium text-blauw mb-3">Technologie implementeren in vier stappen</h2>
+                <p style={{ fontSize: 15, color: '#4a5568', lineHeight: 1.7, maxWidth: 620, marginBottom: '2rem' }}>
+                  Waardewerk begeleidt jouw organisatie van eerste oriëntatie tot werkende technologische oplossing. We werken stapsgewijs, met jou als beslisser op elk moment.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  {[
+                    {
+                      nr: '1', kleur: '#C4006A', titel: 'Richten', sub: 'Technologie-scan',
+                      bullets: [
+                        'We brengen jouw uitdaging in kaart: waar verlies je capaciteit, tijd of geld?',
+                        'We analyseren welke technologie (robotica, AI, automatisering) past bij jouw situatie',
+                        'We maken een onderbouwd advies met concrete oplossingsrichtingen',
+                      ],
+                    },
+                    {
+                      nr: '2', kleur: '#1a2e45', titel: 'Inrichten', sub: 'Ontwerp en businesscase',
+                      bullets: [
+                        'Businesscase opstellen: wat levert de investering op?',
+                        'Leveranciers, partners en implementatietraject in kaart brengen',
+                        "KPI's bepalen zodat resultaat meetbaar is",
+                      ],
+                    },
+                    {
+                      nr: '3', kleur: '#C4006A', titel: 'Verrichten', sub: 'Implementatie',
+                      bullets: [
+                        'We begeleiden de eerste stappen: voordoen → samen doen → jij doet het zelf',
+                        'Borging van adoptie bij je mensen en je organisatie',
+                      ],
+                    },
+                    {
+                      nr: '4', kleur: '#1a2e45', titel: 'Monitoren', sub: 'Doorontwikkeling',
+                      bullets: [
+                        'Vinger aan de pols: werkt de technologie zoals verwacht?',
+                        'Bijsturen waar nodig, doorontwikkelen waar mogelijk',
+                      ],
+                    },
+                  ].map(f => (
+                    <div key={f.nr} style={{ background: '#f7f8fc', borderRadius: 14, padding: '1.5rem', borderTop: `4px solid ${f.kleur}` }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <div style={{ width: 36, height: 36, borderRadius: '50%', background: f.kleur, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <span style={{ fontSize: 15, fontWeight: 700, color: '#fff' }}>{f.nr}</span>
+                        </div>
+                        <div>
+                          <div style={{ fontSize: 15, fontWeight: 700, color: '#1B3A6B' }}>{f.titel}</div>
+                          <div style={{ fontSize: 12, color: '#6b7280', marginTop: 1 }}>{f.sub}</div>
+                        </div>
+                      </div>
+                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        {f.bullets.map((b, i) => (
+                          <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: 13, color: '#4a5568', lineHeight: 1.6 }}>
+                            <span style={{ width: 7, height: 7, borderRadius: '50%', background: f.kleur, flexShrink: 0, marginTop: 5 }} />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
         )}
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
