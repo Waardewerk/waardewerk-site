@@ -12,10 +12,13 @@ export default function Contact() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch('https://formspree.io/f/xwpodqvj', {
+      const body: Record<string, string> = {};
+      data.forEach((val, key) => { body[key] = val as string; });
+
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(body),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       });
       if (res.ok) {
         setStatus('sent');
