@@ -6,12 +6,15 @@ import OnsVerhaal from './components/OnsVerhaal';
 import SocialeZaak from './components/SocialeZaken';
 import TWO from './components/TWO';
 import OverOns from './components/OverOns';
+import Nieuws from './components/Nieuws';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import LogoCarrousel from './components/LogoCarrousel';
 import DienstenPage from './pages/Diensten';
 import SROIMonitorPage from './pages/SROIMonitor';
+import NieuwsPage from './pages/Nieuws';
+import NieuwsDetailPage from './pages/NieuwsDetail';
 
 function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,6 +28,7 @@ function HomePage() {
         <SocialeZaak />
         <TWO />
         <OverOns />
+        <Nieuws />
         <Contact />
       </main>
       <Footer />
@@ -39,6 +43,8 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/diensten" element={<DienstenPage />} />
       <Route path="/sroi-monitor" element={<SROIMonitorPage />} />
+      <Route path="/nieuws" element={<NieuwsPage />} />
+      <Route path="/nieuws/:slug" element={<NieuwsDetailPage />} />
     </Routes>
   );
 }
