@@ -21,7 +21,7 @@ export const NEWS: NewsItem[] = [
     title: 'Is robotisering klaar voor de straatwerkbranche?',
     date: '2026-04-01',
     tag: 'Innovatie',
-    image: '/robohouse-kickoff.jpg',
+    image: '/robohouse-kickoff.jpeg',
     excerpt: 'Drie bedrijven in de straatwerkbranche gaan samen met RoboHouse en Waardewerk onderzoeken of robots het kleine precisiewerk bij straatwerk kunnen overnemen.',
     content: [
-      'We zijn van start. Drie bedrijven in de straatwerkbranche — Groeneveld GWW, Gebr. van Meer en HABO GWW — zijn samen met RoboHouse en Waardewerk een innovatief traject ingegaan om te 
+      'We zijn van start. Drie bedrijven in de straatwerkbranche — Groeneveld GWW, Gebr. van Meer en HABO GWW — zijn samen met RoboHouse en Waardewerk een innovatief traject ingegaan om te
