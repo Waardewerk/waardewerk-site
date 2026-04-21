@@ -11,7 +11,7 @@ const DOWNLOADS: Record<DownloadChoice, { label: string; file: string; desc: str
   whitepaper: {
     label: 'Whitepaper',
     file: '/Whitepaper.pdf',
-    desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over SROI — en er een duurzame strategie van maakt.',
+    desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return — en er een duurzame strategie van maakt.',
   },
   infographic: {
     label: 'Infographic',
@@ -21,7 +21,7 @@ const DOWNLOADS: Record<DownloadChoice, { label: string; file: string; desc: str
 };
 
 const bulletpoints = [
-  'Hoe je als werkgever eigenaarschap neemt over SROI',
+  'Hoe je als werkgever eigenaarschap neemt over Social Return',
   'Waarom regie bij de werkgever leidt tot duurzamere plaatsingen',
   'Concrete aanpak voor de bouw- en infrasector',
   'Stappenplan van intake tot impact-rapportage',
@@ -93,7 +93,7 @@ export default function DienstenPage() {
                 </svg>
               </div>
               <div className="font-medium text-blauw">Sociale innovatie</div>
-              <div className="text-xs text-grijs mt-1">Mensen aan het werk via SROI</div>
+              <div className="text-xs text-grijs mt-1">Mensen aan het werk via Social Return</div>
             </button>
 
             <button
@@ -210,7 +210,7 @@ export default function DienstenPage() {
                     <div className="text-magenta font-semibold text-sm mb-1 uppercase tracking-wide">Aannemer</div>
                     <div className="text-xl font-medium text-blauw mb-3">Continuïteit</div>
                     <ul className="space-y-2 text-sm text-grijs">
-                      {['Sneller toegang tot gemotiveerde medewerkers','SROI-verplichting structureel ingevuld','Minder administratieve last','Subsidies volledig benut','Aantoonbare maatschappelijke bijdrage'].map(i => (
+                      {['Sneller toegang tot gemotiveerde medewerkers','Social Return-verplichting structureel ingevuld','Minder administratieve last','Subsidies volledig benut','Aantoonbare maatschappelijke bijdrage'].map(i => (
                         <li key={i} className="flex gap-2">
                           <span className="text-magenta mt-0.5 flex-shrink-0">✓</span>{i}
                         </li>
@@ -475,7 +475,4 @@ export default function DienstenPage() {
       </main>
 
       <Footer />
-      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} />}
-    </>
-  );
-}
+      {modalOpen && <ContactModal onClose={() => setM

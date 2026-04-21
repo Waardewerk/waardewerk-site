@@ -4,7 +4,7 @@ export default function SocialeZaak() {
       <div className="max-w-5xl mx-auto">
         <p className="eyebrow mb-3">Sociale zaken</p>
         <h2 className="text-3xl font-medium text-blauw leading-snug mb-8">
-          SROI van last naar kans
+          Social Return van last naar kans
         </h2>
 
         {/* Foto — volle breedte */}
@@ -34,10 +34,10 @@ export default function SocialeZaak() {
           {/* Rechts */}
           <div className="space-y-4">
             <p>
-              Mooi initiatief, en dit wordt ook door veel bedrijven omarmd. Nederland zou Nederland niet zijn als we het niet iets te ingewikkeld hebben gemaakt. Iedere gemeente bepaalt haar eigen regels, en leveranciers zien vaak door de bomen het bos niet meer. Met als gevolg dat de SROI-verplichting wordt ingevuld met diensten die weinig bijdragen aan de mensen die het nodig hebben — en dat verplichtingen vaak worden afgekocht. Allemaal niet duurzaam, en dat moeten we niet willen.
+              Mooi initiatief, en dit wordt ook door veel bedrijven omarmd. Nederland zou Nederland niet zijn als we het niet iets te ingewikkeld hebben gemaakt. Iedere gemeente bepaalt haar eigen regels, en leveranciers zien vaak door de bomen het bos niet meer. Met als gevolg dat de Social Return-verplichting wordt ingevuld met diensten die weinig bijdragen aan de mensen die het nodig hebben — en dat verplichtingen vaak worden afgekocht. Allemaal niet duurzaam, en dat moeten we niet willen.
             </p>
             <p>
-              Bij Waardewerk zien we dat zowel aan de kant van opdrachtgevers als opdrachtnemers veel onduidelijkheid bestaat. Om deze reden hebben we een SROI Monitor gemaakt zodat je kunt zien wat de regels zijn in de gemeente waar jij werkt. Wij gaan graag met je in gesprek en maken een plan hoe je SROI van een last kunt omzetten in een kans.
+              Bij Waardewerk zien we dat zowel aan de kant van opdrachtgevers als opdrachtnemers veel onduidelijkheid bestaat. Om deze reden hebben we een SROI Monitor gemaakt zodat je kunt zien wat de regels zijn in de gemeente waar jij werkt. Wij gaan graag met je in gesprek en maken een plan hoe je Social Return van een last kunt omzetten in een kans.
             </p>
             <a
               href="https://sroi-monitor.vercel.app"
@@ -50,7 +50,4 @@ export default function SocialeZaak() {
           </div>
         </div>
 
-      </div>
-    </section>
-  );
-}
+      </

@@ -22,7 +22,7 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Waardewerk — SROI is geen last, het is een kans"
+        title="Waardewerk — De Social Return verplichting is geen last, het is een kans"
         description="Waardewerk helpt ondernemers in de bouw- en infrasector om Social Return slim in te zetten — van beleidsinzicht tot uitvoering."
         path="/"
       />
@@ -50,7 +50,4 @@ export default function App() {
       <Route path="/diensten" element={<DienstenPage />} />
       <Route path="/sroi-monitor" element={<SROIMonitorPage />} />
       <Route path="/nieuws" element={<NieuwsPage />} />
-      <Route path="/nieuws/:slug" element={<NieuwsDetailPage />} />
-    </Routes>
-  );
-}
+      <Route path="/nieuws/:slug" element={<NieuwsDetailPage />}

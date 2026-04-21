@@ -14,7 +14,7 @@ export default function NieuwsPage() {
     <>
       <Seo
         title="Nieuws — Waardewerk"
-        description="Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, SROI, en hoe technologie werk menselijker kan maken."
+        description="Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, Social Return, en hoe technologie werk menselijker kan maken."
         path="/nieuws"
       />
       <Nav onContact={() => setModalOpen(true)} />
@@ -28,7 +28,7 @@ export default function NieuwsPage() {
               Alle berichten
             </h1>
             <p className="text-grijs max-w-2xl leading-relaxed">
-              Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, SROI, en hoe technologie werk menselijker kan maken.
+              Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, Social Return, en hoe technologie werk menselijker kan maken.
             </p>
           </div>
         </section>
@@ -90,7 +90,4 @@ export default function NieuwsPage() {
       </main>
 
       <Footer />
-      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} />}
-    </>
-  );
-}
+      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} /

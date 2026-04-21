@@ -2,7 +2,7 @@ const diensten = [
   { titel: 'SROI-scan & strategie', tekst: 'We analyseren uw aanbestedingen en leveren een concrete strategie die aansluit bij uw projectportfolio.' },
   { titel: 'Trajectbegeleiding', tekst: 'Van eerste contact tot werkende medewerker — wij begeleiden het gehele traject voor u en uw opdrachtgever.' },
   { titel: 'Monitoring & rapportage', tekst: 'Geautomatiseerde registratie en rapportage zodat u altijd kunt aantonen wat uw sociale bijdrage is.' },
-  { titel: 'Gemeentebeleid', tekst: 'Inzicht in welke gemeenten SROI verplichten, welke drempelwaarden gelden en hoe beleid zich ontwikkelt.' },
+  { titel: 'Gemeentebeleid', tekst: 'Inzicht in welke gemeenten Social Return verplichten, welke drempelwaarden gelden en hoe beleid zich ontwikkelt.' },
   { titel: 'Doelgroepnetwerk', tekst: 'Toegang tot een breed netwerk van sociale partners, SW-bedrijven en reintegratiebureaus in uw regio.' },
   { titel: 'Subsidie-inzicht', tekst: 'We brengen in kaart welke BUIG-budgetten en subsidies beschikbaar zijn bij uw gemeentelijke opdrachtgevers.' },
 ];
@@ -10,7 +10,7 @@ const diensten = [
 const stats = [
   { n: '187', l: 'gemeenten met SROI-beleid' },
   { n: '€2,1 mrd', l: 'subsidies in beeld' },
-  { n: '847.000', l: 'mensen bereikbaar via SROI' },
+  { n: '847.000', l: 'mensen bereikbaar via Social Return' },
 ];
 
 export default function Diensten() {
@@ -46,6 +46,4 @@ export default function Diensten() {
           ))}
         </div>
       </div>
-    </section>
-  );
-}
+    
