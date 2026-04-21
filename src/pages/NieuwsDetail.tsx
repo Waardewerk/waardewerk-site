@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
+import Seo from '../components/Seo';
 import { getNewsBySlug, getAllNews, formatNewsDate } from '../data/news';
 
 export default function NieuwsDetailPage() {
@@ -18,6 +19,11 @@ export default function NieuwsDetailPage() {
   if (!item) {
     return (
       <>
+        <Seo
+          title="Bericht niet gevonden — Waardewerk"
+          description="Dit nieuwsbericht bestaat niet (meer)."
+          path={`/nieuws/${slug ?? ''}`}
+        />
         <Nav onContact={() => setModalOpen(true)} />
         <main className="min-h-[60vh] flex items-center justify-center px-6 py-20">
           <div className="max-w-md text-center">
@@ -44,6 +50,13 @@ export default function NieuwsDetailPage() {
 
   return (
     <>
+      <Seo
+        title={`${item.title} — Waardewerk`}
+        description={item.excerpt}
+        path={`/nieuws/${item.slug}`}
+        image={item.image}
+        type="article"
+      />
       <Nav onContact={() => setModalOpen(true)} />
 
       <main>

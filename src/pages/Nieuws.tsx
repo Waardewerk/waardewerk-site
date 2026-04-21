@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
+import Seo from '../components/Seo';
 import { getAllNews, formatNewsDate } from '../data/news';
 
 export default function NieuwsPage() {
@@ -11,6 +12,11 @@ export default function NieuwsPage() {
 
   return (
     <>
+      <Seo
+        title="Nieuws — Waardewerk"
+        description="Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, SROI, en hoe technologie werk menselijker kan maken."
+        path="/nieuws"
+      />
       <Nav onContact={() => setModalOpen(true)} />
 
       <main>
@@ -31,7 +37,14 @@ export default function NieuwsPage() {
         <section className="py-16 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
             {items.length === 0 ? (
-              <p className="text-grijs">Er zijn nog geen berichten.</p>
+              <div className="bg-bg-alt rounded-2xl border border-lijn px-8 py-16 text-center">
+                <p className="text-4xl md:text-5xl font-medium text-blauw mb-3">
+                  Geen nieuws, goed nieuws!
+                </p>
+                <p className="text-grijs max-w-md mx-auto leading-relaxed">
+                  Zodra er iets te melden is, lees je het hier.
+                </p>
+              </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {items.map(item => (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
+import Seo from '../components/Seo';
 
 type FormState = 'idle' | 'sending' | 'sent' | 'error';
 type DownloadChoice = 'whitepaper' | 'infographic';
@@ -55,6 +56,11 @@ export default function DienstenPage() {
 
   return (
     <>
+      <Seo
+        title="Diensten — Waardewerk | Social Return en digitale innovatie"
+        description="Van SROI-strategie en whitepapers tot praktische ondersteuning voor werkgevers in de bouw- en infrasector. Ontdek wat Waardewerk kan betekenen."
+        path="/diensten"
+      />
       <Nav onContact={() => setModalOpen(true)} />
 
       <main>

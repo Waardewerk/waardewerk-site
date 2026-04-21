@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import LogoCarrousel from './components/LogoCarrousel';
+import Seo from './components/Seo';
 import DienstenPage from './pages/Diensten';
 import SROIMonitorPage from './pages/SROIMonitor';
 import NieuwsPage from './pages/Nieuws';
@@ -20,6 +21,11 @@ function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
+      <Seo
+        title="Waardewerk — SROI is geen last, het is een kans"
+        description="Waardewerk helpt ondernemers in de bouw- en infrasector om Social Return slim in te zetten — van beleidsinzicht tot uitvoering."
+        path="/"
+      />
       <Nav onContact={() => setModalOpen(true)} />
       <main>
         <Hero onContact={() => setModalOpen(true)} />

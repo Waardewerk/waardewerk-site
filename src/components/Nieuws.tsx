@@ -66,9 +66,6 @@ function CompactCard({ item }: { item: NewsItem }) {
 
 export default function Nieuws() {
   const items = getLatestNews(3);
-  if (items.length === 0) return null;
-
-  const [featured, ...rest] = items;
 
   return (
     <section id="nieuws" className="py-20 px-6 bg-bg-alt">
@@ -80,26 +77,45 @@ export default function Nieuws() {
               Wat er speelt bij Waardewerk
             </h2>
           </div>
-          <Link
-            to="/nieuws"
-            className="text-sm font-medium text-magenta hover:underline"
-          >
-            Alle berichten →
-          </Link>
+          {items.length > 0 && (
+            <Link
+              to="/nieuws"
+              className="text-sm font-medium text-magenta hover:underline"
+            >
+              Alle berichten →
+            </Link>
+          )}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Uitgelicht — groot, neemt links de volle hoogte */}
-          <div className="md:row-span-2">
-            <FeaturedCard item={featured} />
+        {items.length === 0 ? (
+          <EmptyState />
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Uitgelicht — groot, neemt links de volle hoogte */}
+            <div className="md:row-span-2">
+              <FeaturedCard item={items[0]} />
+            </div>
+
+            {/* Twee kleinere kaarten rechts */}
+            {items.slice(1).map(item => (
+              <CompactCard key={item.slug} item={item} />
+            ))}
           </div>
-
-          {/* Twee kleinere kaarten rechts */}
-          {rest.map(item => (
-            <CompactCard key={item.slug} item={item} />
-          ))}
-        </div>
+        )}
       </div>
     </section>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="bg-white rounded-2xl border border-lijn px-8 py-14 text-center">
+      <p className="text-4xl md:text-5xl font-medium text-blauw mb-3">
+        Geen nieuws, goed nieuws!
+      </p>
+      <p className="text-grijs max-w-md mx-auto leading-relaxed">
+        Zodra er iets te melden is, lees je het hier.
+      </p>
+    </div>
   );
 }
