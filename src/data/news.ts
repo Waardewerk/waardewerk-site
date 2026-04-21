@@ -16,22 +16,12 @@ export interface NewsItem {
 }
 
 export const NEWS: NewsItem[] = [
-  // Nog geen berichten. Voeg een nieuw bericht toe als object bovenaan deze array.
-];
-
-export function getAllNews(): NewsItem[] {
-  return [...NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
-}
-
-export function getLatestNews(n: number): NewsItem[] {
-  return getAllNews().slice(0, n);
-}
-
-export function getNewsBySlug(slug: string): NewsItem | undefined {
-  return NEWS.find(n => n.slug === slug);
-}
-
-export function formatNewsDate(iso: string): string {
-  const d = new Date(iso + 'T00:00:00');
-  return d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
-}
+  {
+    slug: 'is-robotisering-klaar-voor-de-straatwerkbranche',
+    title: 'Is robotisering klaar voor de straatwerkbranche?',
+    date: '2026-04-01',
+    tag: 'Innovatie',
+    image: '/robohouse-kickoff.jpg',
+    excerpt: 'Drie bedrijven in de straatwerkbranche gaan samen met RoboHouse en Waardewerk onderzoeken of robots het kleine precisiewerk bij straatwerk kunnen overnemen.',
+    content: [
+      'We zijn van start. Drie bedrijven in de straatwerkbranche — Groeneveld GWW, Gebr. van Meer en HABO GWW — zijn samen met RoboHouse en Waardewerk een innovatief traject ingegaan om te 
