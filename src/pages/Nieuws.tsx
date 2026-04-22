@@ -90,4 +90,7 @@ export default function NieuwsPage() {
       </main>
 
       <Footer />
-      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} /
+      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} />}
+    </>
+  );
+}

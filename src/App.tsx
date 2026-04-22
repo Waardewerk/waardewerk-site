@@ -50,4 +50,7 @@ export default function App() {
       <Route path="/diensten" element={<DienstenPage />} />
       <Route path="/sroi-monitor" element={<SROIMonitorPage />} />
       <Route path="/nieuws" element={<NieuwsPage />} />
-      <Route path="/nieuws/:slug" element={<NieuwsDetailPage />}
+      <Route path="/nieuws/:slug" element={<NieuwsDetailPage />} />
+    </Routes>
+  );
+}

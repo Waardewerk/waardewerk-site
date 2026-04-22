@@ -50,4 +50,7 @@ export default function SocialeZaak() {
           </div>
         </div>
 
-      </
+      </div>
+    </section>
+  );
+}

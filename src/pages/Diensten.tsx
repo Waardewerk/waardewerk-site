@@ -475,4 +475,7 @@ export default function DienstenPage() {
       </main>
 
       <Footer />
-      {modalOpen && <ContactModal onClose={() => setM
+      {modalOpen && <ContactModal onClose={() => setModalOpen(false)} />}
+    </>
+  );
+}

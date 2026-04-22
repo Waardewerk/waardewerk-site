@@ -46,4 +46,6 @@ export default function Diensten() {
           ))}
         </div>
       </div>
-    
+    </section>
+  );
+}
