@@ -24,7 +24,7 @@ export const NEWS: NewsItem[] = [
     image: '/robohouse-kickoff.jpeg',
     excerpt: 'Drie bedrijven in de straatwerkbranche gaan samen met RoboHouse en Waardewerk onderzoeken of robots een rol kunnen spelen bij het kleine precisiewerk dat nu nog volledig handmatig wordt gedaan.',
     content: [
-      'We zijn van start. Drie bedrijven in de straatwerkbranche \u2014 Groeneveld GWW, Gebr. van Meer en HABO GWW \u2014 zijn samen met RoboHouse en Waardewerk een innovatief traject ingegaan om te onderzoeken of robots een rol kunnen spelen bij het kleine straatwerk dat nu nog volledig handmatig wordt gedaan.',
+      'We zijn van start. Drie bedrijven in de straatwerkbranche \u2014 Groeneveld GWW, Gebr. van Meer en HABO GWW \u2014 zijn samen met RoboHouse, BAM en Waardewerk een innovatief traject ingegaan om te onderzoeken of robots een rol kunnen spelen bij het kleine straatwerk dat nu nog volledig handmatig wordt gedaan.',
       'Grote machines maken het machinaal straten al langer mogelijk. Maar het kleine, precisiewerk \u2014 het leggen van klinkers langs de randen, in hoeken, langs obstakels, op onregelmatige oppervlakken \u2014 is nog altijd handarbeid. Dat is precies waar dit onderzoek zich op richt.',
       'RoboHouse brengt in kaart wat een stratenmaker nu precies doet: welke stappen worden handmatig uitgevoerd, in welke volgorde, met welke krachten en bewegingen? Dat vormt de basis om te bepalen welke onderdelen van het werk robotiseerbaar zijn en hoe.',
       'De komende maanden werken alle partijen samen aan die vraag om te kijken wat er technisch haalbaar is en wat het vak vraagt.',
