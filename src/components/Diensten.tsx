@@ -1,6 +1,6 @@
 const diensten = [
   { titel: 'SROI-scan & strategie', tekst: 'We analyseren uw aanbestedingen en leveren een concrete strategie die aansluit bij uw projectportfolio.' },
-  { titel: 'Trajectbegeleiding', tekst: 'Van eerste contact tot werkende medewerker — wij begeleiden het gehele traject voor u en uw opdrachtgever.' },
+  { titel: 'Trajectbegeleiding', tekst: 'Van eerste contact tot werkende medewerker , wij begeleiden het gehele traject voor u en uw opdrachtgever.' },
   { titel: 'Monitoring & rapportage', tekst: 'Geautomatiseerde registratie en rapportage zodat u altijd kunt aantonen wat uw sociale bijdrage is.' },
   { titel: 'Gemeentebeleid', tekst: 'Inzicht in welke gemeenten Social Return verplichten, welke drempelwaarden gelden en hoe beleid zich ontwikkelt.' },
   { titel: 'Doelgroepnetwerk', tekst: 'Toegang tot een breed netwerk van sociale partners, SW-bedrijven en reintegratiebureaus in uw regio.' },
@@ -20,7 +20,7 @@ export default function Diensten() {
         <p className="eyebrow mb-3">Diensten</p>
         <h2 className="text-3xl font-medium text-blauw mb-3">Wat we voor u doen</h2>
         <p className="text-grijs max-w-xl mb-12">
-          Van eerste oriëntatie tot volledige implementatie — Waardewerk ondersteunt u in elk stadium van uw SROI-traject.
+          Van eerste oriëntatie tot volledige implementatie , Waardewerk ondersteunt u in elk stadium van uw SROI-traject.
         </p>
 
         {/* Grid */}

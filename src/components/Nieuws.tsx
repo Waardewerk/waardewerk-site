@@ -91,7 +91,7 @@ export default function Nieuws() {
           <EmptyState />
         ) : (
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Uitgelicht — groot, neemt links de volle hoogte */}
+            {/* Uitgelicht , groot, neemt links de volle hoogte */}
             <div className="md:row-span-2">
               <FeaturedCard item={items[0]} />
             </div>

@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Seo
-        title="Privacyverklaring — Waardewerk"
+        title="Privacyverklaring , Waardewerk"
         description="Privacyverklaring van Waardewerk (Let's Be Well BV). Laatste update april 2026."
         path="/privacy"
       />
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
               <p className="mt-2">
                 Contact:{' '}
                 <a href="mailto:info@waardewerk.org" className="text-magenta hover:underline">info@waardewerk.org</a>
-                {' '}—{' '}
+                {' '},{' '}
                 <a href="https://waardewerk.org" className="text-magenta hover:underline">waardewerk.org</a>
               </p>
             </div>

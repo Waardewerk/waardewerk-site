@@ -20,7 +20,7 @@ export default function NieuwsDetailPage() {
     return (
       <>
         <Seo
-          title="Bericht niet gevonden — Waardewerk"
+          title="Bericht niet gevonden , Waardewerk"
           description="Dit nieuwsbericht bestaat niet (meer)."
           path={`/nieuws/${slug ?? ''}`}
         />
@@ -51,7 +51,7 @@ export default function NieuwsDetailPage() {
   return (
     <>
       <Seo
-        title={`${item.title} — Waardewerk`}
+        title={`${item.title} , Waardewerk`}
         description={item.excerpt}
         path={`/nieuws/${item.slug}`}
         image={item.image}

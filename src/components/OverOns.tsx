@@ -33,16 +33,16 @@ export default function OverOns() {
           {/* Bio tekst */}
           <div className="flex-1 space-y-4 text-grijs leading-relaxed">
             <p>
-              Ik ben Ruud Blom, oprichter van Waardewerk. Al bijna 30 jaar hou ik me bezig met hoe mensen omgaan met technologie. Begonnen in de mobiele telefonie in 1997 — en daar een enorme shift in denken en werken meegemaakt. Het heeft me altijd geboeid: hoe gaan mensen hier nu mee om?
+              Ik ben Ruud Blom, oprichter van Waardewerk. Al bijna 30 jaar hou ik me bezig met hoe mensen omgaan met technologie. Begonnen in de mobiele telefonie in 1997 , en daar een enorme shift in denken en werken meegemaakt. Het heeft me altijd geboeid: hoe gaan mensen hier nu mee om?
             </p>
             <p>
-              Vele jaren heb ik als trainer gewerkt en daar veel geleerd over menselijk gedrag. Hoe krijg je mensen in beweging? De tijden van keihard werken op basis van financiële prikkels liggen ver achter ons. Er is veel meer sociaal ondernemerschap nodig om überhaupt aan mensen te komen — en zeker ook om ze te behouden.
+              Vele jaren heb ik als trainer gewerkt en daar veel geleerd over menselijk gedrag. Hoe krijg je mensen in beweging? De tijden van keihard werken op basis van financiële prikkels liggen ver achter ons. Er is veel meer sociaal ondernemerschap nodig om überhaupt aan mensen te komen , en zeker ook om ze te behouden.
             </p>
             <p>
               Nu staan we qua techniek op een heel ander kantelpunt. Er is technologie die zelf besluiten neemt en vele malen slimmer is dan wij. Er zijn robots in aantocht die vele taken lichter gaan maken en ons op veel fronten gaan vervangen. Wat betekent dit voor ons menszijn en de waarde die we onszelf toekennen?
             </p>
             <p className="text-blauw font-semibold text-base border-l-4 border-magenta pl-4 py-1">
-              Vandaar Waardewerk — eigenwaarde door te werken, en waarde leveren door het werk wat je doet, wat je ook doet. Sociaal ondernemerschap en het omarmen van technologie gaan hand in hand. Werk voor je mensen en laat techniek voor je werken.
+              Vandaar Waardewerk , eigenwaarde door te werken, en waarde leveren door het werk wat je doet, wat je ook doet. Sociaal ondernemerschap en het omarmen van technologie gaan hand in hand. Werk voor je mensen en laat techniek voor je werken.
             </p>
           </div>
         </div>

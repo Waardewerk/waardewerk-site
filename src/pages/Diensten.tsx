@@ -11,7 +11,7 @@ const DOWNLOADS: Record<DownloadChoice, { label: string; file: string; desc: str
   whitepaper: {
     label: 'Whitepaper',
     file: '/Whitepaper.pdf',
-    desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return — en er een duurzame strategie van maakt.',
+    desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return , en er een duurzame strategie van maakt.',
   },
   infographic: {
     label: 'Infographic',
@@ -64,7 +64,7 @@ export default function DienstenPage() {
   return (
     <>
       <Seo
-        title="Diensten — Waardewerk | Social Return en digitale innovatie"
+        title="Diensten , Waardewerk | Social Return en digitale innovatie"
         description="Van SROI-strategie en whitepapers tot praktische ondersteuning voor werkgevers in de bouw- en infrasector. Ontdek wat Waardewerk kan betekenen."
         path="/diensten"
       />
@@ -81,7 +81,7 @@ export default function DienstenPage() {
                 De mensen zijn er.<br />De regie ontbreekt nog.
               </h1>
               <p className="text-white/70 text-lg leading-relaxed max-w-xl mx-auto">
-                De bouwsector kampt met structureel personeelstekort. Tegelijk staan tienduizenden mensen aan de kant. Waardewerk brengt beide werelden samen — met structuur, begeleiding en meetbare impact.
+                De bouwsector kampt met structureel personeelstekort. Tegelijk staan tienduizenden mensen aan de kant. Waardewerk brengt beide werelden samen , met structuur, begeleiding en meetbare impact.
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function DienstenPage() {
                 <p className="eyebrow mb-3">Sociale innovatie</p>
                 <h2 className="text-2xl font-medium text-blauw mb-6">Mensen maken het verschil</h2>
                 <p className="text-grijs leading-relaxed">
-                  De bouwsector staat voor meer dan een technisch vraagstuk. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking — zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, maar gewoon goed ondernemerschap.
+                  De bouwsector staat voor meer dan een technisch vraagstuk. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking , zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, maar gewoon goed ondernemerschap.
                 </p>
               </div>
             </section>
@@ -138,7 +138,7 @@ export default function DienstenPage() {
                 <p className="eyebrow mb-3">Social Return</p>
                 <h2 className="text-2xl font-medium text-blauw mb-6">Verplichting als strategisch instrument</h2>
                 <p className="text-grijs leading-relaxed">
-                  Werk je voor gemeenten of andere overheden? Dan krijg je te maken met Social Return — de verplichting om een deel van je opdracht in te zetten voor mensen met afstand tot de arbeidsmarkt. SROI (Social Return on Investment) is de methode waarmee die bijdrage wordt gemeten en verantwoord. Bedrijven ervaren dit vaak als last. Waardewerk helpt je het anders te zien: als een kans om talent te vinden, subsidies te benutten en je positie als opdrachtnemer te versterken.
+                  Werk je voor gemeenten of andere overheden? Dan krijg je te maken met Social Return , de verplichting om een deel van je opdracht in te zetten voor mensen met afstand tot de arbeidsmarkt. SROI (Social Return on Investment) is de methode waarmee die bijdrage wordt gemeten en verantwoord. Bedrijven ervaren dit vaak als last. Waardewerk helpt je het anders te zien: als een kans om talent te vinden, subsidies te benutten en je positie als opdrachtnemer te versterken.
                 </p>
               </div>
             </section>
@@ -267,7 +267,7 @@ export default function DienstenPage() {
                 <blockquote className="text-xl font-medium text-blauw leading-relaxed mb-4">
                   "Iedereen doet wat, maar niemand stemt af."
                 </blockquote>
-                <cite className="text-sm text-grijs not-italic">— Directeur vastgoedonderhoud, grote woningcorporatie</cite>
+                <cite className="text-sm text-grijs not-italic">, Directeur vastgoedonderhoud, grote woningcorporatie</cite>
               </div>
             </section>
 
@@ -403,7 +403,7 @@ export default function DienstenPage() {
                 <p className="eyebrow mb-3">Robotica</p>
                 <h2 className="text-2xl font-medium text-blauw mb-6">Zwaar werk slimmer organiseren</h2>
                 <p className="text-grijs leading-relaxed">
-                  In de bouwsector en zeker in de infra is personeel schaars en zwaar werk steeds lastiger in te vullen. Grote machines passen niet overal en je moet toch door. Robotiseren biedt een praktische uitweg — en de techniek is toegankelijker dan je denkt. Waar begin je? Wat past bij jouw bedrijf? Waardewerk helpt je de juiste vragen te stellen, tot de kern van je uitdaging te komen en tot een oplossing met een gedegen businesscase.
+                  In de bouwsector en zeker in de infra is personeel schaars en zwaar werk steeds lastiger in te vullen. Grote machines passen niet overal en je moet toch door. Robotiseren biedt een praktische uitweg , en de techniek is toegankelijker dan je denkt. Waar begin je? Wat past bij jouw bedrijf? Waardewerk helpt je de juiste vragen te stellen, tot de kern van je uitdaging te komen en tot een oplossing met een gedegen businesscase.
                 </p>
               </div>
             </section>
@@ -414,7 +414,7 @@ export default function DienstenPage() {
                 <p className="eyebrow mb-3">Artificiële Intelligentie</p>
                 <h2 className="text-2xl font-medium text-blauw mb-6">Van kenniswerk naar automatisering</h2>
                 <p className="text-grijs leading-relaxed">
-                  De technologische ontwikkeling gaat razendsnel en AI maakt kennis en automatisering steeds toegankelijker en goedkoper. Wat gebeurt er in je bedrijf als je met een AI-agent de taken van een kantoormedewerker volledig kunt automatiseren — 24/7, tegen een fractie van de kosten? Dat vraagt om keuzes: operationeel, tactisch en strategisch. Waardewerk ondersteunt je daarin. Want één ding is zeker: wie nieuwe technologie omarmt, blijft toekomstbestendig.
+                  De technologische ontwikkeling gaat razendsnel en AI maakt kennis en automatisering steeds toegankelijker en goedkoper. Wat gebeurt er in je bedrijf als je met een AI-agent de taken van een kantoormedewerker volledig kunt automatiseren , 24/7, tegen een fractie van de kosten? Dat vraagt om keuzes: operationeel, tactisch en strategisch. Waardewerk ondersteunt je daarin. Want één ding is zeker: wie nieuwe technologie omarmt, blijft toekomstbestendig.
                 </p>
               </div>
             </section>
@@ -491,7 +491,7 @@ export default function DienstenPage() {
           <div className="max-w-xl mx-auto text-center">
             <h2 className="text-3xl font-medium text-blauw mb-4">Klaar om de stap te zetten?</h2>
             <p className="text-grijs leading-relaxed mb-8">
-              Laat ons een gratis SROI-scan maken voor jouw organisatie. We brengen in kaart wat er mogelijk is — en wat het oplevert.
+              Laat ons een gratis SROI-scan maken voor jouw organisatie. We brengen in kaart wat er mogelijk is , en wat het oplevert.
             </p>
             <button
               onClick={() => setModalOpen(true)}

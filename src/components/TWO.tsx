@@ -22,7 +22,7 @@ export default function TWO() {
             Sociale zaken
           </p>
           <h2 style={{ fontSize: 36, fontWeight: 600, lineHeight: 1.2, color: '#1B3A6B', marginBottom: '0.5rem' }}>
-            <span style={{ color: '#C2185B' }}>TWO</span> — De Tewerkstellingsorganisatie
+            <span style={{ color: '#C2185B' }}>TWO</span> , De Tewerkstellingsorganisatie
           </h2>
           <span style={{ display: 'inline-block', fontSize: 13, fontWeight: 500, color: '#C2185B', background: '#fce4ec', padding: '4px 12px', borderRadius: 20, marginBottom: '1.25rem' }}>
             Een concept van Uri Breman
@@ -48,8 +48,8 @@ export default function TWO() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
             {[
-              { titel: 'Onduidelijke regels', body: 'SROI, SLIM, O&O-fondsen — elke gemeente hanteert eigen criteria. Wat telt mee? Wat niet? Tegen de tijd dat je het weet, is de deadline voorbij.' },
-              { titel: 'Te weinig tijd', body: 'Een aannemer of mkb\'er heeft geen HR-afdeling die dit bijhoudt. Begeleiding, subsidieaanvragen, rapportages — het stapelt zich op naast het gewone werk.' },
+              { titel: 'Onduidelijke regels', body: 'SROI, SLIM, O&O-fondsen , elke gemeente hanteert eigen criteria. Wat telt mee? Wat niet? Tegen de tijd dat je het weet, is de deadline voorbij.' },
+              { titel: 'Te weinig tijd', body: 'Een aannemer of mkb\'er heeft geen HR-afdeling die dit bijhoudt. Begeleiding, subsidieaanvragen, rapportages , het stapelt zich op naast het gewone werk.' },
               { titel: 'Niemand die borgt', body: 'Gemeenten verwijzen. Opleiders onderwijzen. Werkgevers produceren. Maar niemand is eindverantwoordelijk voor de uitkomst. Mensen vallen tussen wal en schip.' },
             ].map(k => (
               <div key={k.titel} style={{ background: '#fce4ec', borderRadius: 12, padding: '1.4rem 1.5rem', borderLeft: '4px solid #C2185B' }}>

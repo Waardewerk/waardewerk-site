@@ -13,7 +13,7 @@ export default function NieuwsPage() {
   return (
     <>
       <Seo
-        title="Nieuws — Waardewerk"
+        title="Nieuws , Waardewerk"
         description="Updates, visie en events van Waardewerk. Over sociaal ondernemerschap, Social Return, en hoe technologie werk menselijker kan maken."
         path="/nieuws"
       />

@@ -9,7 +9,7 @@ export default function SROIMonitorPage() {
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       <Seo
-        title="SROI Monitor — Waardewerk"
+        title="SROI Monitor , Waardewerk"
         description="Live dashboard met SROI-cijfers per Nederlandse gemeente. Zie waar sociale ondernemerskansen liggen in de bouw- en infrasector."
         path="/sroi-monitor"
       />
