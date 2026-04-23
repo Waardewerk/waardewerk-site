@@ -4,30 +4,6 @@ export default function OverOns() {
       <div className="max-w-5xl mx-auto">
         <p className="eyebrow mb-3">Over ons</p>
 
-        {/* ── Waardewerk ─────────────────────────────────────────── */}
-        <h2 className="text-3xl font-medium text-blauw leading-snug mb-5">
-          Waardewerk
-        </h2>
-
-        <p className="text-grijs leading-relaxed mb-10 max-w-3xl">
-          Waardewerk ondersteunt ondernemers met technologische en sociale innovaties. De huidige arbeidsmarkt en regeldruk vragen een andere manier van denken en werken, wil je als ondernemer toekomstgericht zijn en relevant blijven.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-10 mb-20">
-          <div className="border-l-4 border-magenta pl-5">
-            <h3 className="font-semibold text-magenta mb-3">Technologische Innovatie</h3>
-            <p className="text-grijs leading-relaxed text-sm">
-              De ontwikkelingen gaan nog nooit zo snel als nu. Dat geeft kansen, en bedreigingen. Omdat we zuinig moeten zijn op onze mensen, en soms omdat regelgeving ons dat vraagt, is technologie omarmen geen keuze meer. Van het robotiseren van straatwerk tot strategisch nadenken over AI: dit zijn vraagstukken waar Waardewerk zich graag in vastbijt. We helpen je de juiste keuzes maken en je mensen door de verandering loodsen.
-            </p>
-          </div>
-          <div className="border-l-4 border-magenta pl-5">
-            <h3 className="font-semibold text-magenta mb-3">Sociale Innovatie</h3>
-            <p className="text-grijs leading-relaxed text-sm">
-              De arbeidsmarkt in de bouwsector dwingt tot meer sociale innovatie. Mensen centraal stellen, dienend leiderschap tonen, het gaat om je menselijk kapitaal. Als mensen alleen maar uitstromen, moet je creatief worden. Wij helpen je ontdekken wat werkt, pragmatisch en altijd met een gezonde kijk op de businesscase.
-            </p>
-          </div>
-        </div>
-
         {/* ── Ruud Blom ──────────────────────────────────────────── */}
         <h2 className="text-3xl font-medium text-blauw leading-snug mb-10">
           Over Ruud Blom
