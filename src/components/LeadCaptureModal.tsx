@@ -33,8 +33,15 @@ export default function LeadCaptureModal({ open, onClose, initialChoice = 'white
     const data = new FormData(e.currentTarget);
     data.append('download', DOWNLOADS[choice].label);
     try {
-      const res = await fetch('https://formspree.io/f/xwpodqvj', {
-        method: 'POST', body: data, headers: { Accept: 'application/json' },
+      const payload: Record<string, string> = {};
+      data.forEach((v, k) => { payload[k] = v as string; });
+      payload['_subject'] = `Download aanvraag: ${payload['download'] || 'document'}`;
+      payload['_captcha'] = 'false';
+      payload['_template'] = 'table';
+      const res = await fetch('https://formsubmit.co/ajax/ruudmblom@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch {
