@@ -4,7 +4,7 @@ export default function SocialeZaak() {
       <div className="max-w-5xl mx-auto">
         <p className="eyebrow mb-3">Sociale zaken</p>
         <h2 className="text-3xl font-medium text-blauw leading-snug mb-8">
-          Social Return van last naar kans
+          Social Return: van last naar kans
         </h2>
 
         {/* Foto — volle breedte */}
