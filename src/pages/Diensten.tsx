@@ -114,6 +114,28 @@ export default function DienstenPage() {
         {/* ── Sociale innovatie ─────────────────────────────────────────── */}
         {activeTab === 'sociaal' && (
           <>
+            {/* Sociale innovatie intro */}
+            <section className="py-16 px-6 bg-white">
+              <div className="max-w-3xl mx-auto">
+                <p className="eyebrow mb-3">Sociale innovatie</p>
+                <h2 className="text-2xl font-medium text-blauw mb-6">Mensen maken het verschil</h2>
+                <p className="text-grijs leading-relaxed">
+                  De bouwsector staat voor meer dan een technisch vraagstuk. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking — zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, maar gewoon goed ondernemerschap.
+                </p>
+              </div>
+            </section>
+
+            {/* Social Return */}
+            <section className="py-16 px-6 bg-bg-alt border-t border-lijn">
+              <div className="max-w-3xl mx-auto">
+                <p className="eyebrow mb-3">Social Return</p>
+                <h2 className="text-2xl font-medium text-blauw mb-6">Verplichting als strategisch instrument</h2>
+                <p className="text-grijs leading-relaxed">
+                  Werk je voor gemeenten of andere overheden? Dan krijg je te maken met Social Return — de verplichting om een deel van je opdracht in te zetten voor mensen met afstand tot de arbeidsmarkt. SROI (Social Return on Investment) is de methode waarmee die bijdrage wordt gemeten en verantwoord. Bedrijven ervaren dit vaak als last. Waardewerk helpt je het anders te zien: als een kans om talent te vinden, subsidies te benutten en je positie als opdrachtnemer te versterken.
+                </p>
+              </div>
+            </section>
+
             {/* Win-cards */}
             <section className="py-16 px-6 bg-white">
               <div className="max-w-3xl mx-auto">
@@ -456,30 +478,6 @@ export default function DienstenPage() {
             </section>
           </>
         )}
-
-
-        {/* ── Sociale Innovatie ────────────────────────────────────────────── */}
-        {/* Sociale innovatie */}
-        <section className="py-16 px-6 bg-white border-t border-lijn">
-          <div className="max-w-3xl mx-auto">
-            <p className="eyebrow mb-3">Sociale innovatie</p>
-            <h2 className="text-2xl font-medium text-blauw mb-6">Mensen maken het verschil</h2>
-            <p className="text-grijs leading-relaxed">
-              De bouwsector staat voor meer dan een technisch vraagstuk. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking — zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, maar gewoon goed ondernemerschap.
-            </p>
-          </div>
-        </section>
-
-        {/* Social Return */}
-        <section className="py-16 px-6 bg-bg-alt border-t border-lijn">
-          <div className="max-w-3xl mx-auto">
-            <p className="eyebrow mb-3">Social Return</p>
-            <h2 className="text-2xl font-medium text-blauw mb-6">Verplichting als strategisch instrument</h2>
-            <p className="text-grijs leading-relaxed">
-              Werk je voor gemeenten of andere overheden? Dan krijg je te maken met Social Return — de verplichting om een deel van je opdracht in te zetten voor mensen met afstand tot de arbeidsmarkt. SROI (Social Return on Investment) is de methode waarmee die bijdrage wordt gemeten en verantwoord. Bedrijven ervaren dit vaak als last. Waardewerk helpt je het anders te zien: als een kans om talent te vinden, subsidies te benutten en je positie als opdrachtnemer te versterken.
-            </p>
-          </div>
-        </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
         <section className="py-20 px-6 bg-white">
