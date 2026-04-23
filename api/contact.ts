@@ -1,9 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY, {
-  baseUrl: 'https://api.eu.resend.com',
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method \!== 'POST') {
@@ -17,9 +15,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const result = await resend.emails.send({
-      from: 'Waardewerk formulier <noreply@waardewerk.org>',
-      to: 'info@waardewerk.org',
+    const { data, error } = await resend.emails.send({
+      from: 'Waardewerk <noreply@waardewerk.org>',
+      to: ['ruudmblom@gmail.com'],
       replyTo: email,
       subject: `Nieuwe aanvraag van ${voornaam} ${achternaam}`,
       html: `
@@ -34,14 +32,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
-    if (result.error) {
-      console.error('Resend error:', result.error);
-      return res.status(500).json({ error: result.error.message });
+    if (error) {
+      console.error('Resend error:', JSON.stringify(error));
+      return res.status(500).json({ error: error.message });
     }
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, id: data?.id });
   } catch (err) {
-    console.error('Resend exception:', err);
-    return res.status(500).json({ error: 'Verzenden mislukt' });
+    console.error('Exception:', err);
+    return res.status(500).json({ error: String(err) });
   }
 }
