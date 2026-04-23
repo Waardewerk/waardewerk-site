@@ -11,8 +11,20 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
     try {
-      const res = await fetch('https://formspree.io/f/xwpodqvj', {
-        method: 'POST', body: data, headers: { Accept: 'application/json' },
+      const res = await fetch('https://formsubmit.co/ajax/ruudmblom@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          voornaam: data.get('voornaam'),
+          achternaam: data.get('achternaam'),
+          bedrijf: data.get('bedrijf') || '',
+          email: data.get('email'),
+          gemeente: data.get('gemeente') || '',
+          vraag: data.get('vraag'),
+          _subject: `Nieuwe aanvraag van ${data.get('voornaam')} ${data.get('achternaam')}`,
+          _captcha: 'false',
+          _template: 'table',
+        }),
       });
       if (res.ok) { setStatus('sent'); form.reset(); }
       else setStatus('error');
@@ -96,7 +108,7 @@ export default function Contact() {
               {status === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Stuur een e-mail naar info@waardewerk.org.</p>}
               <button type="submit" disabled={status === 'sending'}
                 className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3.5 rounded-full transition-colors text-sm">
-                {status === 'sending' ? 'Versturen…' : 'Gratis scan aanvragen →'}
+                {status === 'sending' ? 'Versturen...' : 'Gratis scan aanvragen \u2192'}
               </button>
             </form>
           )}

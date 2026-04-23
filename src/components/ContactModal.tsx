@@ -11,8 +11,19 @@ export default function ContactModal({ onClose }: Props) {
     setStatus('sending');
     const data = new FormData(e.currentTarget);
     try {
-      const res = await fetch('https://formspree.io/f/xwpodqvj', {
-        method: 'POST', body: data, headers: { Accept: 'application/json' },
+      const res = await fetch('https://formsubmit.co/ajax/ruudmblom@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          voornaam: data.get('voornaam'),
+          achternaam: data.get('achternaam'),
+          bedrijf: data.get('bedrijf') || '',
+          email: data.get('email'),
+          vraag: data.get('vraag'),
+          _subject: `Nieuwe aanvraag van ${data.get('voornaam')} ${data.get('achternaam')}`,
+          _captcha: 'false',
+          _template: 'table',
+        }),
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch { setStatus('error'); }
@@ -71,7 +82,7 @@ export default function ContactModal({ onClose }: Props) {
             {status === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Stuur een e-mail naar info@waardewerk.org.</p>}
             <button type="submit" disabled={status === 'sending'}
               className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3 rounded-full transition-colors text-sm mt-1">
-              {status === 'sending' ? 'Versturen…' : 'Scan aanvragen →'}
+              {status === 'sending' ? 'Versturen...' : 'Scan aanvragen \u2192'}
             </button>
           </form>
         )}
