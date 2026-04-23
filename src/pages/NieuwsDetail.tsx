@@ -83,7 +83,17 @@ export default function NieuwsDetailPage() {
               {item.title}
             </h1>
 
-            {item.image && (
+            {item.youtube ? (
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${item.youtube}`}
+                  title={item.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            ) : item.image && (
               <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-magenta-licht">
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
               </div>
