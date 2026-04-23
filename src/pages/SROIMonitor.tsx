@@ -51,6 +51,64 @@ function GemeenteDetail({ g, onClose }: { g: GemeenteProfile; onClose: () => voi
               </div>
             )}
           </div>
+          {g.uitvoerder && (
+            <div className="bg-bg-alt rounded-xl p-4 text-sm">
+              <p className="text-xs text-grijs mb-1">Uitvoerder</p>
+              <p className="font-medium text-blauw">{g.uitvoerder}</p>
+            </div>
+          )}
+
+          {g.maatwerkActiviteiten && (
+            <div>
+              <h3 className="text-sm font-semibold text-blauw mb-3 flex items-center gap-2">
+                <span className="w-1 h-4 bg-magenta rounded-full inline-block" />
+                Maatwerk-activiteiten en waarden
+              </h3>
+              <div className="space-y-3">
+                {g.maatwerkActiviteiten.map((act, i) => (
+                  <div key={i} className="rounded-xl border border-lijn overflow-hidden">
+                    <div className="bg-bg-alt px-4 py-2 text-xs font-semibold text-blauw">{act.categorie}</div>
+                    {act.regels.map((regel, j) => (
+                      <div key={j} className="px-4 py-2 text-sm text-grijs border-t border-lijn first:border-t-0">{regel}</div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-grijs mt-3 italic">Invulling van maatwerk-activiteiten altijd in overleg met en goedkeuring van accountmanager of Social Return adviseur van het Coördinatiepunt Social Return.</p>
+            </div>
+          )}
+
+          {g.erkendPartners && (
+            <div>
+              <h3 className="text-sm font-semibold text-blauw mb-3 flex items-center gap-2">
+                <span className="w-1 h-4 bg-magenta rounded-full inline-block" />
+                Erkende lokale partners
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {g.erkendPartners.map((p, i) => (
+                  <span key={i} className="bg-magenta-licht text-magenta text-xs font-medium px-3 py-1.5 rounded-full">{p}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {g.succesverhalen && (
+            <div>
+              <h3 className="text-sm font-semibold text-blauw mb-3 flex items-center gap-2">
+                <span className="w-1 h-4 bg-magenta rounded-full inline-block" />
+                Succesverhalen
+              </h3>
+              <div className="space-y-3">
+                {g.succesverhalen.map((sv, i) => (
+                  <div key={i} className="rounded-xl border border-lijn p-4">
+                    <p className="font-medium text-blauw text-sm mb-1">{sv.titel}</p>
+                    <p className="text-grijs text-sm leading-relaxed">{sv.tekst}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {g.bouwblokken && (
             <>
               <div>
