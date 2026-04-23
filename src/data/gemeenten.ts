@@ -1,0 +1,92 @@
+export type Status = 'Verplicht' | 'Actief beleid' | 'In ontwikkeling';
+
+export interface BouwblokItem {
+  label: string;
+  waarde: string;
+}
+
+export interface GemeenteProfile {
+  code: string;
+  naam: string;
+  provincie: string;
+  sroiPct: string;
+  status: Status;
+  drempel: number;
+  typeOpdrachten: string;
+  aanbestedingsvol: number;
+  contactEmail?: string;
+  methode?: string;
+  bouwblokken?: {
+    waarden: BouwblokItem[];
+    bonussen: BouwblokItem[];
+    andereMogelijkheden: BouwblokItem[];
+  };
+}
+
+export const GEMEENTEN: GemeenteProfile[] = [
+  {
+    code: 'GM0344',
+    naam: 'Utrecht',
+    provincie: 'Utrecht',
+    sroiPct: '5%',
+    status: 'Verplicht',
+    drempel: 250000,
+    typeOpdrachten: 'Werken, Diensten',
+    aanbestedingsvol: 890000000,
+    contactEmail: 'socialreturn@utrecht.nl',
+    methode: 'Bouwblokken',
+    bouwblokken: {
+      waarden: [
+        { label: 'Participatiewet', waarde: '€ 40.000' },
+        { label: 'Ingeschreven in doelgroepregister UWV (met arbeidsbeperking)', waarde: '€ 50.000' },
+        { label: 'Leerwerkplek praktijk- en voortgezet speciaal onderwijs / mbo niveau 1', waarde: '€ 35.000' },
+        { label: 'WIA- of WAO-uitkering van UWV', waarde: '€ 40.000' },
+        { label: 'WW-uitkering van UWV', waarde: '€ 20.000' },
+        { label: 'Mbo bbl niveau 2, 3 en 4', waarde: '€ 35.000' },
+        { label: 'Mbo bol niveau 2, 3 en 4', waarde: '€ 20.000' },
+        { label: 'Geen recht op uitkering', waarde: '€ 10.000' },
+      ],
+      bonussen: [
+        { label: 'Ouder dan 50 jaar', waarde: '€ 10.000' },
+        { label: 'Statushouders en werkzoekenden met taalachterstand', waarde: '€ 10.000' },
+        { label: 'Vast contract', waarde: '€ 10.000' },
+      ],
+      andereMogelijkheden: [
+        { label: 'Inkopen bij sociale bedrijven', waarde: 'Loonkosten excl. btw' },
+        { label: 'Scholing, kennis of middelen', waarde: 'Kosten of € 100 per medewerker per uur' },
+        { label: 'Sociaal project steunen', waarde: 'Kosten of € 100 per medewerker per uur' },
+        { label: 'Scholing en ontwikkeling social return-medewerkers', waarde: 'In overleg met adviseur' },
+        { label: 'Werkzoekenden met uitkering ondersteunen richting werk', waarde: 'In overleg met adviseur' },
+      ],
+    },
+  },
+  { code: 'GM0363', naam: 'Amsterdam', provincie: 'Noord-Holland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 3100000000 },
+  { code: 'GM0599', naam: 'Rotterdam', provincie: 'Zuid-Holland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 2400000000 },
+  { code: 'GM0518', naam: 'Den Haag', provincie: 'Zuid-Holland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 1800000000 },
+  { code: 'GM0772', naam: 'Eindhoven', provincie: 'Noord-Brabant', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken', aanbestedingsvol: 680000000 },
+  { code: 'GM0392', naam: 'Groningen', provincie: 'Groningen', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 560000000 },
+  { code: 'GM0503', naam: 'Tilburg', provincie: 'Noord-Brabant', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken', aanbestedingsvol: 480000000 },
+  { code: 'GM0268', naam: 'Almere', provincie: 'Flevoland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 420000000 },
+  { code: 'GM0797', naam: "'s-Hertogenbosch", provincie: 'Noord-Brabant', sroiPct: '5%', status: 'Actief beleid', drempel: 250000, typeOpdrachten: 'Werken', aanbestedingsvol: 410000000 },
+  { code: 'GM0060', naam: 'Arnhem', provincie: 'Gelderland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 380000000 },
+  { code: 'GM0394', naam: 'Enschede', provincie: 'Overijssel', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 360000000 },
+  { code: 'GM0243', naam: 'Nijmegen', provincie: 'Gelderland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 350000000 },
+  { code: 'GM0153', naam: 'Breda', provincie: 'Noord-Brabant', sroiPct: '3%', status: 'In ontwikkeling', drempel: 500000, typeOpdrachten: 'Werken', aanbestedingsvol: 320000000 },
+  { code: 'GM0796', naam: 'Haarlem', provincie: 'Noord-Holland', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 310000000 },
+  { code: 'GM0050', naam: 'Amersfoort', provincie: 'Utrecht', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 290000000 },
+  { code: 'GM0034', naam: 'Apeldoorn', provincie: 'Gelderland', sroiPct: '5%', status: 'Actief beleid', drempel: 250000, typeOpdrachten: 'Werken', aanbestedingsvol: 280000000 },
+  { code: 'GM0867', naam: 'Zwolle', provincie: 'Overijssel', sroiPct: '5%', status: 'Verplicht', drempel: 250000, typeOpdrachten: 'Werken, Diensten', aanbestedingsvol: 260000000 },
+  { code: 'GM0882', naam: 'Haarlemmermeer', provincie: 'Noord-Holland', sroiPct: '5%', status: 'Actief beleid', drempel: 500000, typeOpdrachten: 'Werken', aanbestedingsvol: 240000000 },
+];
+
+export function formatBedrag(n: number): string {
+  if (n >= 1_000_000_000) return `€ ${(n / 1_000_000_000).toFixed(1).replace('.', ',')} mld`;
+  if (n >= 1_000_000) return `€ ${(n / 1_000_000).toFixed(0)} mln`;
+  return `€ ${n.toLocaleString('nl-NL')}`;
+}
+
+export const STATUS_COLOR: Record<Status, string> = {
+  'Verplicht': 'bg-green-100 text-green-700',
+  'Actief beleid': 'bg-blue-100 text-blue-700',
+  'In ontwikkeling': 'bg-yellow-100 text-yellow-700',
+};
