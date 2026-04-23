@@ -11,7 +11,7 @@ export default function Nav({ onContact: _ }: Props) {
   const navigate = useNavigate();
 
   function scrollTo(id: string) {
-    if (location.pathname \!== '/') {
+    if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -24,7 +24,7 @@ export default function Nav({ onContact: _ }: Props) {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (popoverRef.current && \!popoverRef.current.contains(e.target as Node)) {
+      if (popoverRef.current && !popoverRef.current.contains(e.target as Node)) {
         setShowPopover(false);
       }
     }
@@ -49,12 +49,13 @@ export default function Nav({ onContact: _ }: Props) {
           <button onClick={() => scrollTo('contact')} className="hover:text-blauw transition-colors">Contact</button>
         </div>
 
+        {/* CTA + popover */}
         <div className="hidden md:block relative" ref={popoverRef}>
           <button
-            onClick={() => setShowPopover(p => \!p)}
+            onClick={() => setShowPopover(p => !p)}
             className="bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
           >
-            Bel me\!
+            Bel me!
           </button>
 
           {showPopover && (
@@ -82,7 +83,7 @@ export default function Nav({ onContact: _ }: Props) {
           )}
         </div>
 
-        <button className="md:hidden text-blauw" onClick={() => setOpen(o => \!o)}>
+        <button className="md:hidden text-blauw" onClick={() => setOpen(o => !o)}>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open
               ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
