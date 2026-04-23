@@ -13,7 +13,7 @@ export interface NewsItem {
   image?: string;         // optioneel pad onder /public, bv. '/news/foo.jpg'
   tag?: string;           // optioneel label, bv. 'Aankondiging'
   content: string[];      // paragrafen
-  youtube?: string;      // YouTube video-ID, bv. 'dQw4w9WgXcQ'
+  youtube?: string;       // YouTube video-ID, bv. 'dQw4w9WgXcQ'
 }
 
 export const NEWS: NewsItem[] = [
@@ -24,14 +24,14 @@ export const NEWS: NewsItem[] = [
     tag: 'Innovatie',
     youtube: 'TMpqucngavY',
     image: 'https://img.youtube.com/vi/TMpqucngavY/maxresdefault.jpg',
-    excerpt: 'Ik reed gisteren voor het eerst volledig hands-free van A naar B in mijn Tesla. Wat me het meest verbaasde was niet de technologie — maar hoe menselijk de auto handelde.',
+    excerpt: `Ik reed gisteren voor het eerst volledig hands-free van A naar B in mijn Tesla. Wat me het meest verbaasde was niet de technologie \u2014 maar hoe menselijk de auto handelde.`,
     content: [
-      'Gisteren heb ik mijn Tesla omgebouwd met Full Self Driving Supervised FSD (het was een software-update van 20 minuten) en toen kon ik gaan zitten, handen op schoot, ogen op de weg (je blijft zelf verantwoordelijk) en rijden maar.',
-      'Het is echt mindblowing wat hier gebeurt. De rijervaring is zo soepel en veilig dat je al heel snel went dat je controle op de weg overgeeft aan een robot.',
-      'Je drukt letterlijk op de knop FSD starten en hij gaat naar de ingevoerde bestemming en zet de auto voor de deur. Dat de auto kan sturen en afstanden kan inschatten, dat lijkt me logisch voor een calculerende robot vol sensoren en camera's. Wat me het meest verbaasde was het inschatten van afwijkende situaties. In een 30 km zone stond een oudere dame langs de kant van de straat, het was geen oversteekplaats en ze gaf niet duidelijk aan wat ze wilde doen. Toch stopte de auto en liet haar oversteken — zoals je dat zelf ook zou kunnen doen, niet vanuit moeten, vanuit willen. Heel bijzonder en menselijk qua handelen.',
-      'Wat er direct in me opkwam is wat de impact op mobiliteit is van deze stap. Inmiddels zijn er 12 miljard kilometers gereden met FSD en de kans op ongevallen is 92% minder dan met een menselijke chauffeur. Hoelang gaat het duren voor dat verzekeraars de premie voor menselijke chauffeurs gaan verhogen of iemand helemaal niet meer gaan verzekeren — 2 jaar? 5 jaar? Verzekeraars kunnen behoorlijk bepalend zijn in sommige industrieën.',
-      'Complimenten voor de RDW om dit toe te staan op de Nederlandse wegen. Dat had ik niet verwacht. Ben benieuwd welk land volgt en al helemaal wanneer het, net als in de VS in bepaalde staten, wordt toegestaan om helemaal autonoom te rijden — niet “supervised”.',
-      'Wil je dit een keer ervaren en meteen eens van gedachten wisselen over wat robotisering voor jouw organisatie kan betekenen? Mail naar ruud@waardewerk.org',
+      `Gisteren heb ik mijn Tesla omgebouwd met Full Self Driving Supervised FSD (het was een software-update van 20 minuten) en toen kon ik gaan zitten, handen op schoot, ogen op de weg (je blijft zelf verantwoordelijk) en rijden maar.`,
+      `Het is echt mindblowing wat hier gebeurt. De rijervaring is zo soepel en veilig dat je al heel snel went dat je controle op de weg overgeeft aan een robot.`,
+      `Je drukt letterlijk op de knop FSD starten en hij gaat naar de ingevoerde bestemming en zet de auto voor de deur. Dat de auto kan sturen en afstanden kan inschatten, dat lijkt me logisch voor een calculerende robot vol sensoren en camera\u2019s. Wat me het meest verbaasde was het inschatten van afwijkende situaties. In een 30 km zone stond een oudere dame langs de kant van de straat, het was geen oversteekplaats en ze gaf niet duidelijk aan wat ze wilde doen. Toch stopte de auto en liet haar oversteken \u2014 zoals je dat zelf ook zou kunnen doen, niet vanuit moeten, vanuit willen. Heel bijzonder en menselijk qua handelen.`,
+      `Wat er direct in me opkwam is wat de impact op mobiliteit is van deze stap. Inmiddels zijn er 12 miljard kilometers gereden met FSD en de kans op ongevallen is 92% minder dan met een menselijke chauffeur. Hoelang gaat het duren voor dat verzekeraars de premie voor menselijke chauffeurs gaan verhogen of iemand helemaal niet meer gaan verzekeren \u2014 2 jaar? 5 jaar? Verzekeraars kunnen behoorlijk bepalend zijn in sommige industrie\u00ebn.`,
+      `Complimenten voor de RDW om dit toe te staan op de Nederlandse wegen. Dat had ik niet verwacht. Ben benieuwd welk land volgt en al helemaal wanneer het, net als in de VS in bepaalde staten, wordt toegestaan om helemaal autonoom te rijden \u2014 niet \u201csupervised\u201d.`,
+      `Wil je dit een keer ervaren en meteen eens van gedachten wisselen over wat robotisering voor jouw organisatie kan betekenen? Mail naar ruud@waardewerk.org`,
     ],
   },
   {
