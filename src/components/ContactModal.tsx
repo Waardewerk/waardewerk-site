@@ -11,12 +11,8 @@ export default function ContactModal({ onClose }: Props) {
     setStatus('sending');
     const data = new FormData(e.currentTarget);
     try {
-      const body: Record<string, string> = {};
-      data.forEach((val, key) => { body[key] = val as string; });
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      const res = await fetch('https://formspree.io/f/xwpodqvj', {
+        method: 'POST', body: data, headers: { Accept: 'application/json' },
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch { setStatus('error'); }
@@ -37,7 +33,6 @@ export default function ContactModal({ onClose }: Props) {
             </svg>
           </button>
         </div>
-
         {status === 'sent' ? (
           <div className="px-6 py-10 flex flex-col items-center text-center gap-3">
             <div className="w-12 h-12 rounded-full bg-magenta-licht flex items-center justify-center">
