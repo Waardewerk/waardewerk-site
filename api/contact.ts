@@ -1,21 +1,23 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY, {
+  baseUrl: 'https://api.eu.resend.com',
+});
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
+  if (req.method \!== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const { voornaam, achternaam, bedrijf, email, gemeente, vraag } = req.body as Record<string, string>;
 
-  if (!voornaam || !achternaam || !email || !vraag) {
+  if (\!voornaam || \!achternaam || \!email || \!vraag) {
     return res.status(400).json({ error: 'Verplichte velden ontbreken' });
   }
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Waardewerk formulier <noreply@waardewerk.org>',
       to: 'info@waardewerk.org',
       replyTo: email,
@@ -32,9 +34,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
+    if (result.error) {
+      console.error('Resend error:', result.error);
+      return res.status(500).json({ error: result.error.message });
+    }
+
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('Resend error:', err);
+    console.error('Resend exception:', err);
     return res.status(500).json({ error: 'Verzenden mislukt' });
   }
 }
