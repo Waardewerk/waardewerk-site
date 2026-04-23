@@ -40,7 +40,7 @@ export default function SocialeZaak() {
               Bij Waardewerk zien we dat zowel aan de kant van opdrachtgevers als opdrachtnemers veel onduidelijkheid bestaat. Om deze reden hebben we een SROI Monitor gemaakt zodat je kunt zien wat de regels zijn in de gemeente waar jij werkt. Wij gaan graag met je in gesprek en maken een plan hoe je Social Return van een last kunt omzetten in een kans.
             </p>
             <a
-              href="https://sroi-monitor.vercel.app"
+              href="/sroi-monitor"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white font-medium px-7 py-3.5 rounded-full transition-colors text-sm"
