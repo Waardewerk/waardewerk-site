@@ -11,8 +11,12 @@ export default function ContactModal({ onClose }: Props) {
     setStatus('sending');
     const data = new FormData(e.currentTarget);
     try {
-      const res = await fetch('https://formspree.io/f/xwpodqvj', {
-        method: 'POST', body: data, headers: { Accept: 'application/json' },
+      const body: Record<string, string> = {};
+      data.forEach((val, key) => { body[key] = val as string; });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch { setStatus('error'); }
@@ -41,7 +45,7 @@ export default function ContactModal({ onClose }: Props) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p className="font-medium text-blauw">Aanvraag ontvangen!</p>
+            <p className="font-medium text-blauw">Aanvraag ontvangen\!</p>
             <p className="text-sm text-grijs">We nemen binnen één werkdag contact op.</p>
             <button onClick={onClose} className="mt-2 px-5 py-2 bg-magenta text-white text-sm font-medium rounded-full hover:bg-[#a8005a] transition-colors">Sluiten</button>
           </div>
@@ -69,7 +73,7 @@ export default function ContactModal({ onClose }: Props) {
               <label className="block text-xs font-medium text-blauw mb-1">Vraag</label>
               <textarea name="vraag" required rows={3} className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30 resize-none" />
             </div>
-            {status === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Probeer opnieuw.</p>}
+            {status === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Stuur een e-mail naar info@waardewerk.org.</p>}
             <button type="submit" disabled={status === 'sending'}
               className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3 rounded-full transition-colors text-sm mt-1">
               {status === 'sending' ? 'Versturen…' : 'Scan aanvragen →'}
