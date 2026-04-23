@@ -1,8 +1,18 @@
 {
   "outputDirectory": "dist/client",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/two_page.html", "destination": "/two_page.html" },
     { "source": "/sroi_page.html", "destination": "/sroi_page.html" },
-    { "source": "/((?!api/)(?!.*\\.[a-zA-Z0-9]{1,5}$).*)", "destination": "/index.html" }
+    { "source": "/((?\!api/)(?\!.*\\.[a-zA-Z0-9]{1,5}$).*)", "destination": "/index.html" }
   ]
 }
