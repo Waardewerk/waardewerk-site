@@ -5,9 +5,4 @@ export default function Footer() {
         <span>© 2025 Waardewerk · 's-Hertogenbosch</span>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white/70 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-white/70 transition-colors">Algemene voorwaarden</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
+          <a href="/algemene-voorwaarden.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">Algemene
