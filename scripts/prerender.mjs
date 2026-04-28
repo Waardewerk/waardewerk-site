@@ -26,7 +26,7 @@ const SITE_URL = 'https://waardewerk.org';
 // ── Routes ────────────────────────────────────────────────────────────────
 // Statische routes zijn hardcoded. Nieuws-slugs laden we dynamisch uit
 // src/data/news.ts via de SSR-bundle (daarin is NEWS geëxporteerd).
-const STATIC_ROUTES = ['/', '/diensten', '/sroi-monitor', '/nieuws'];
+const STATIC_ROUTES = ['/', '/diensten', '/sroi-monitor', '/nieuws', '/over-ons'];
 
 async function main() {
   // 1. Lees HTML-template uit de client-build

@@ -44,7 +44,7 @@ export default function Nav({ onContact: _ }: Props) {
           <Link to="/diensten" className={`hover:text-blauw transition-colors ${location.pathname === '/diensten' ? 'text-blauw' : ''}`}>Diensten</Link>
           <button onClick={() => scrollTo('sociale-zaken')} className="hover:text-blauw transition-colors">Sociale zaken</button>
           <Link to="/sroi-monitor" className={`hover:text-blauw transition-colors ${location.pathname === '/sroi-monitor' ? 'text-blauw' : ''}`}>SROI Monitor</Link>
-          <button onClick={() => scrollTo('over-ons')} className="hover:text-blauw transition-colors">Over ons</button>
+          <Link to="/over-ons" className={`hover:text-blauw transition-colors ${location.pathname === '/over-ons' ? 'text-blauw' : ''}`}>Over ons</Link>
           <button onClick={() => scrollTo('nieuws')} className="hover:text-blauw transition-colors">Nieuws</button>
           <button onClick={() => scrollTo('contact')} className="hover:text-blauw transition-colors">Contact</button>
         </div>
@@ -97,7 +97,7 @@ export default function Nav({ onContact: _ }: Props) {
           <Link to="/diensten" onClick={() => setOpen(false)}>Diensten</Link>
           <button className="text-left" onClick={() => scrollTo('sociale-zaken')}>Sociale zaken</button>
           <Link to="/sroi-monitor" onClick={() => setOpen(false)}>SROI Monitor</Link>
-          <button className="text-left" onClick={() => scrollTo('over-ons')}>Over ons</button>
+          <Link to="/over-ons" onClick={() => setOpen(false)}>Over ons</Link>
           <button className="text-left" onClick={() => scrollTo('nieuws')}>Nieuws</button>
           <button className="text-left" onClick={() => scrollTo('contact')}>Contact</button>
           <div className="border-t border-lijn pt-3 flex flex-col gap-2">
