@@ -17,6 +17,7 @@ import SROIMonitorPage from './pages/SROIMonitor';
 import NieuwsPage from './pages/Nieuws';
 import NieuwsDetailPage from './pages/NieuwsDetail';
 import PrivacyPage from './pages/Privacy';
+import OverOnsPage from './pages/OverOns';
 
 function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -53,6 +54,7 @@ export default function App() {
       <Route path="/nieuws" element={<NieuwsPage />} />
       <Route path="/nieuws/:slug" element={<NieuwsDetailPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/over-ons" element={<OverOnsPage />} />
     </Routes>
   );
 }
