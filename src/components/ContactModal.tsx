@@ -35,7 +35,7 @@ export default function ContactModal({ onClose }: Props) {
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-lijn">
           <div>
-            <h2 className="text-lg font-medium text-blauw">Gratis SROI-scan aanvragen</h2>
+            <h2 className="text-lg font-medium text-blauw">Neem contact op</h2>
             <p className="text-sm text-grijs mt-0.5">We reageren binnen één werkdag</p>
           </div>
           <button onClick={onClose} className="text-grijs hover:text-blauw p-1 rounded-lg hover:bg-bg-alt transition-colors">

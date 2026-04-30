@@ -489,15 +489,12 @@ export default function DienstenPage() {
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
         <section className="py-20 px-6 bg-white">
           <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-3xl font-medium text-blauw mb-4">Klaar om de stap te zetten?</h2>
-            <p className="text-grijs leading-relaxed mb-8">
-              Laat ons een gratis SROI-scan maken voor jouw organisatie. We brengen in kaart wat er mogelijk is , en wat het oplevert.
-            </p>
+            <h2 className="text-3xl font-medium text-blauw mb-8">Klaar voor een volgende stap?</h2>
             <button
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white font-medium px-8 py-4 rounded-full transition-colors"
             >
-              Gratis SROI-scan aanvragen
+              Neem contact met mij op
             </button>
           </div>
         </section>
