@@ -55,21 +55,21 @@ function CompactCard({ item }: { item: NewsItem }) {
         </div>
       )}
       <div className="p-6 flex-1 flex flex-col">
-      <div className="flex items-center gap-3 text-xs text-grijs mb-3">
-        {item.tag && (
-          <span className="bg-magenta-licht text-magenta font-medium px-2.5 py-0.5 rounded-full">
-            {item.tag}
-          </span>
-        )}
-        <span>{formatNewsDate(item.date)}</span>
-      </div>
-      <h3 className="text-base font-medium text-blauw leading-snug mb-2 group-hover:text-magenta transition-colors">
-        {item.title}
-      </h3>
-      <p className="text-grijs text-sm leading-relaxed flex-1">{item.excerpt}</p>
-      <span className="text-magenta text-xs font-medium mt-4 group-hover:underline">
-        Lees verder →
-      </span>
+        <div className="flex items-center gap-3 text-xs text-grijs mb-3">
+          {item.tag && (
+            <span className="bg-magenta-licht text-magenta font-medium px-2.5 py-0.5 rounded-full">
+              {item.tag}
+            </span>
+          )}
+          <span>{formatNewsDate(item.date)}</span>
+        </div>
+        <h3 className="text-base font-medium text-blauw leading-snug mb-2 group-hover:text-magenta transition-colors">
+          {item.title}
+        </h3>
+        <p className="text-grijs text-sm leading-relaxed flex-1">{item.excerpt}</p>
+        <span className="text-magenta text-xs font-medium mt-4 group-hover:underline">
+          Lees verder →
+        </span>
       </div>
     </Link>
   );
@@ -102,7 +102,7 @@ export default function Nieuws() {
           <EmptyState />
         ) : (
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Uitgelicht , groot, neemt links de volle hoogte */}
+            {/* Uitgelicht, groot, neemt links de volle hoogte */}
             <div className="md:row-span-2">
               <FeaturedCard item={items[0]} />
             </div>
@@ -118,4 +118,15 @@ export default function Nieuws() {
   );
 }
 
-function Emp
+function EmptyState() {
+  return (
+    <div className="bg-white rounded-2xl border border-lijn px-8 py-14 text-center">
+      <p className="text-4xl md:text-5xl font-medium text-blauw mb-3">
+        Geen nieuws, goed nieuws!
+      </p>
+      <p className="text-grijs max-w-md mx-auto leading-relaxed">
+        Zodra er iets te melden is, lees je het hier.
+      </p>
+    </div>
+  );
+}
