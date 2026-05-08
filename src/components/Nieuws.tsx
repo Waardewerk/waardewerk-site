@@ -43,8 +43,18 @@ function CompactCard({ item }: { item: NewsItem }) {
   return (
     <Link
       to={`/nieuws/${item.slug}`}
-      className="group flex flex-col bg-white rounded-2xl border border-lijn p-6 hover:border-magenta/40 hover:shadow-sm transition-all h-full"
+      className="group flex flex-col bg-white rounded-2xl border border-lijn overflow-hidden hover:border-magenta/40 hover:shadow-sm transition-all h-full"
     >
+      {item.image && (
+        <div className="aspect-[16/9] overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+          />
+        </div>
+      )}
+      <div className="p-6 flex-1 flex flex-col">
       <div className="flex items-center gap-3 text-xs text-grijs mb-3">
         {item.tag && (
           <span className="bg-magenta-licht text-magenta font-medium px-2.5 py-0.5 rounded-full">
@@ -60,6 +70,7 @@ function CompactCard({ item }: { item: NewsItem }) {
       <span className="text-magenta text-xs font-medium mt-4 group-hover:underline">
         Lees verder →
       </span>
+      </div>
     </Link>
   );
 }
@@ -107,15 +118,4 @@ export default function Nieuws() {
   );
 }
 
-function EmptyState() {
-  return (
-    <div className="bg-white rounded-2xl border border-lijn px-8 py-14 text-center">
-      <p className="text-4xl md:text-5xl font-medium text-blauw mb-3">
-        Geen nieuws, goed nieuws!
-      </p>
-      <p className="text-grijs max-w-md mx-auto leading-relaxed">
-        Zodra er iets te melden is, lees je het hier.
-      </p>
-    </div>
-  );
-}
+function Emp
