@@ -22,7 +22,7 @@ export default function TWO() {
             Sociale zaken
           </p>
           <h2 style={{ fontSize: 36, fontWeight: 600, lineHeight: 1.2, color: '#1B3A6B', marginBottom: '0.5rem' }}>
-            <span style={{ color: '#C2185B' }}>TWO</span> , De Tewerkstellingsorganisatie
+            <span style={{ color: '#C2185B' }}>TWO</span> , Traject Werk Ontwikkeling
           </h2>
           <span style={{ display: 'inline-block', fontSize: 13, fontWeight: 500, color: '#C2185B', background: '#fce4ec', padding: '4px 12px', borderRadius: 20, marginBottom: '1.25rem' }}>
             Een concept van Uri Breman
@@ -127,3 +127,4 @@ export default function TWO() {
     </section>
   );
 }
+    
