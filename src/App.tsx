@@ -3,8 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import OnsVerhaal from './components/OnsVerhaal';
-import SocialeZaak from './components/SocialeZaken';
-import TWO from './components/TWO';
 import OverOns from './components/OverOns';
 import Nieuws from './components/Nieuws';
 import Contact from './components/Contact';
@@ -33,8 +31,6 @@ function HomePage() {
         <Hero onContact={() => setModalOpen(true)} />
         <LogoCarrousel />
         <OnsVerhaal />
-        <SocialeZaak />
-        <TWO />
         <OverOns />
         <Nieuws />
         <Contact />

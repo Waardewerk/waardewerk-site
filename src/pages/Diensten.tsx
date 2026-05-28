@@ -127,7 +127,7 @@ export default function DienstenPage() {
                 <p className="eyebrow mb-3">Sociale innovatie</p>
                 <h2 className="text-2xl font-medium text-blauw mb-6">Mensen maken het verschil</h2>
                 <p className="text-grijs leading-relaxed">
-                  De bouwsector staat voor meer dan alleen technische vraagstukken. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking , zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, maar gewoon goed ondernemerschap.
+                  De bouwsector staat voor meer dan alleen technische vraagstukken. Vergrijzing, krapte op de arbeidsmarkt en een groeiende groep mensen met afstand tot werk vragen om een andere manier van kijken. Sociale innovatie gaat over het slim organiseren van mensen, rollen en samenwerking , zodat je bedrijf veerkrachtiger wordt én bijdraagt aan een inclusievere arbeidsmarkt. Geen ideologie, gewoon goed ondernemerschap.
                 </p>
               </div>
             </section>
