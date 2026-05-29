@@ -22,8 +22,8 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Waardewerk — De Social Return verplichting is geen last, het is een kans"
-        description="Waardewerk helpt ondernemers in de bouw- en infrasector om Social Return slim in te zetten — van beleidsinzicht tot uitvoering."
+        title="Waardewerk — Mens op één, technologie als hefboom"
+        description="Waardewerk helpt ondernemers in de bouw- en infrasector met Social Return en technologische innovatie. Praktisch, direct toepasbaar."
         path="/"
       />
       <Nav onContact={() => setModalOpen(true)} />
