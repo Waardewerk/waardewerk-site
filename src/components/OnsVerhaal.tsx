@@ -4,7 +4,7 @@ export default function OnsVerhaal() {
       <div className="max-w-5xl mx-auto">
         {/* Intro */}
         <p className="text-grijs leading-relaxed text-lg mb-12 max-w-3xl">
-          Waardewerk zorgt dat jouw bedrijf klaar is voor de toekomst. Mens op nummer één, technologie vaak als hefboom, continuïteit als resultaat.
+          Waardewerk zorgt dat jouw bedrijf klaar is voor de toekomst. De mens op nummer één, technologie vaak als hefboom, continuïteit als resultaat.
         </p>
 
         {/* Twee kolommen */}
@@ -23,7 +23,7 @@ export default function OnsVerhaal() {
             <div className="border-l-4 border-magenta pl-5 mb-8">
               <h3 className="font-semibold text-magenta mb-3">Sociale Innovatie</h3>
               <p className="text-grijs leading-relaxed text-sm">
-                De arbeidsmarkt in de bouwsector staat zwaar onder druk, staat bij jou de mens op de eerste plaats? Social Return en SROI bieden op dit vlak ook kansen, het kan een aanjager zijn voor nieuw talent in je bedrijf. De combinatie van een sociale werkgever zijn en ondertussen een gezond bedrijf kunnen draaien, dat kan en voelt heel goed. Hier ondersteunen we je graag bij.
+                De arbeidsmarkt in de bouwsector staat zwaar onder druk, dat weten we allemaal. Staat bij jullie de mens op de eerste plaats? Social Return en SROI bieden op dit vlak ook kansen, het kan een aanjager zijn voor nieuw talent in je bedrijf. De combinatie van een sociale werkgever zijn en ondertussen een gezond bedrijf kunnen draaien! Kan dat dan? Jazeker dat kan en je wordt er ook nog heel blij van. Hier ondersteunen we je graag bij.
               </p>
               <p className="text-sm text-grijs mt-3">
                 Zijn de Social Return regels onduidelijk?{' '}
