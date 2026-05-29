@@ -2,6 +2,11 @@ export default function OnsVerhaal() {
   return (
     <section id="ons-verhaal" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
+        {/* Intro */}
+        <p className="text-grijs leading-relaxed text-lg mb-12 max-w-3xl">
+          Waardewerk zorgt dat jouw bedrijf klaar is voor de toekomst. Mens op nummer één, technologie vaak als hefboom, continuïteit als resultaat.
+        </p>
+
         {/* Twee kolommen */}
         <div className="grid md:grid-cols-2 gap-14 items-start">
           {/* Links: tekst */}
