@@ -26,9 +26,6 @@ export default function OnsVerhaal() {
                 De arbeidsmarkt in de bouwsector staat zwaar onder druk, staat bij jou de mens op de eerste plaats? Social Return en SROI bieden op dit vlak ook kansen, het kan een aanjager zijn voor nieuw talent in je bedrijf. De combinatie van een sociale werkgever zijn en ondertussen een gezond bedrijf kunnen draaien, dat kan en voelt heel goed. Hier ondersteunen we je graag bij.
               </p>
               <p className="text-sm text-grijs mt-3">
-                <a href="/two_infographic.pdf" target="_blank" className="text-magenta hover:underline font-medium">Download hier de infographic</a>
-              </p>
-              <p className="text-sm text-grijs mt-1">
                 Zijn de Social Return regels onduidelijk?{' '}
                 <a href="/sroi-monitor" className="text-magenta hover:underline font-medium">Kijk op de SROI Monitor</a>
               </p>
