@@ -38,24 +38,12 @@ export default function Contact() {
           <p className="eyebrow mb-3">Contact</p>
           <h2 className="text-3xl font-medium text-blauw leading-snug mb-5">Samen aan de slag?</h2>
           <p className="text-grijs leading-relaxed mb-8">
-            Vraag een gratis SROI-scan aan en ontdek wat Waardewerk voor uw bedrijf kan betekenen. We reageren binnen één werkdag.
+            Bel of mail mij gerust. Ik reageer binnen één werkdag.
           </p>
-          <div className="flex flex-col gap-4 text-sm">
-            {[
-              { icon: '✉', label: 'E-mail', val: 'info@waardewerk.org', href: 'mailto:info@waardewerk.org' },
-              { icon: '📍', label: 'Vestiging', val: "'s-Hertogenbosch", href: undefined },
-              { icon: '🌐', label: 'Website', val: 'waardewerk.org', href: 'https://waardewerk.org' },
-            ].map(c => (
-              <div key={c.label} className="flex items-center gap-3">
-                <span className="text-lg">{c.icon}</span>
-                <div>
-                  <div className="text-grijs text-xs">{c.label}</div>
-                  {c.href
-                    ? <a href={c.href} className="text-blauw font-medium hover:text-magenta transition-colors">{c.val}</a>
-                    : <span className="text-blauw font-medium">{c.val}</span>}
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col gap-2 text-sm">
+            <p className="text-blauw font-semibold">Ruud Blom</p>
+            <a href="tel:0657448298" className="text-blauw hover:text-magenta transition-colors font-medium">06 57 44 82 98</a>
+            <a href="mailto:ruud@waardewerk.org" className="text-blauw hover:text-magenta transition-colors font-medium">ruud@waardewerk.org</a>
           </div>
         </div>
 
@@ -108,7 +96,7 @@ export default function Contact() {
               {status === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Stuur een e-mail naar info@waardewerk.org.</p>}
               <button type="submit" disabled={status === 'sending'}
                 className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3.5 rounded-full transition-colors text-sm">
-                {status === 'sending' ? 'Versturen...' : 'Gratis scan aanvragen \u2192'}
+                {status === 'sending' ? 'Versturen...' : 'Verzenden'}
               </button>
             </form>
           )}

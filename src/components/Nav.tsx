@@ -42,8 +42,6 @@ export default function Nav({ onContact: _ }: Props) {
 
         <div className="hidden md:flex items-center gap-7 text-sm text-grijs font-medium">
           <Link to="/sroi-monitor" className={`hover:text-blauw transition-colors ${location.pathname === '/sroi-monitor' ? 'text-blauw' : ''}`}>SROI Monitor</Link>
-          <Link to="/over-ons" className={`hover:text-blauw transition-colors ${location.pathname === '/over-ons' ? 'text-blauw' : ''}`}>Over ons</Link>
-          <button onClick={() => scrollTo('nieuws')} className="hover:text-blauw transition-colors">Nieuws</button>
           <button onClick={() => scrollTo('contact')} className="hover:text-blauw transition-colors">Contact</button>
         </div>
 
@@ -93,8 +91,6 @@ export default function Nav({ onContact: _ }: Props) {
       {open && (
         <div className="md:hidden bg-white border-t border-lijn px-6 py-4 flex flex-col gap-4 text-sm font-medium text-grijs">
           <Link to="/sroi-monitor" onClick={() => setOpen(false)}>SROI Monitor</Link>
-          <Link to="/over-ons" onClick={() => setOpen(false)}>Over ons</Link>
-          <button className="text-left" onClick={() => scrollTo('nieuws')}>Nieuws</button>
           <button className="text-left" onClick={() => scrollTo('contact')}>Contact</button>
           <div className="border-t border-lijn pt-3 flex flex-col gap-2">
             <p className="text-xs text-grijs">Direct contact</p>
