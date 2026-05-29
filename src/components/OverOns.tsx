@@ -34,7 +34,7 @@ export default function OverOns() {
           {/* Bio tekst */}
           <div className="flex-1 space-y-4 text-grijs leading-relaxed">
             <p>
-              Ik ben Ruud Blom, al 30 jaar hou ik me bezig met hoe mensen omgaan met techniek en hoe je ze kunt helpen aanpassen.
+              Mijn naam is Ruud Blom, al 30 jaar hou ik me bezig met hoe mensen omgaan met techniek en weet wat nodig is om ze te helpen aanpassen.
             </p>
             <p>
               De afgelopen jaren heb ik veel infra ondernemers/ambachtslieden bijgestaan met dit soort vraagstukken. Van het maken van een goed plan voor de toekomst tot robotisering van straatwerk. Heel praktisch en direct toepasbaar.
@@ -43,7 +43,7 @@ export default function OverOns() {
               Veranderen is hard werken, het moet wil je kunnen voortbestaan. Dit betekent veel voor je mensen en vraagt leiderschap van jou als ondernemer. Hier loods ik je doorheen recht voor je raap en met veel plezier.
             </p>
             <p className="text-blauw font-semibold text-base border-l-4 border-magenta pl-4 py-1">
-              Vandaar Waardewerk — eigenwaarde door te werken, en waarde leveren door het werk wat je doet, wat je ook doet. Sociaal ondernemerschap en het omarmen van technologie gaan hand in hand. Werk voor je mensen en laat techniek voor je werken.
+              Vandaar Waardewerk — eigenwaarde door te werken, en waarde leveren door het werk wat je doet, wat je ook doet. 
             </p>
           </div>
         </div>
