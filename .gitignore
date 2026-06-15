@@ -8,3 +8,4 @@ dist-verify/
 
 .vercel
 .claude/
+*.bak
