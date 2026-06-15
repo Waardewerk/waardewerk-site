@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { getLatestNews, formatNewsDate, type NewsItem } from '../data/news';
+import { getLatestNews, getDateLabel, type NewsItem } from '../data/news';
 
 function FeaturedCard({ item }: { item: NewsItem }) {
   return (
@@ -25,7 +25,7 @@ function FeaturedCard({ item }: { item: NewsItem }) {
               {item.tag}
             </span>
           )}
-          <span>{formatNewsDate(item.date)}</span>
+          <span>{getDateLabel(item)}</span>
         </div>
         <h3 className="text-xl md:text-2xl font-medium text-blauw leading-snug mb-3 group-hover:text-magenta transition-colors">
           {item.title}
@@ -61,7 +61,7 @@ function CompactCard({ item }: { item: NewsItem }) {
               {item.tag}
             </span>
           )}
-          <span>{formatNewsDate(item.date)}</span>
+          <span>{getDateLabel(item)}</span>
         </div>
         <h3 className="text-base font-medium text-blauw leading-snug mb-2 group-hover:text-magenta transition-colors">
           {item.title}

@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import Seo from '../components/Seo';
-import { getAllNews, formatNewsDate } from '../data/news';
+import { getAllNews, getDateLabel } from '../data/news';
 
 export default function NieuwsPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -71,7 +71,7 @@ export default function NieuwsPage() {
                             {item.tag}
                           </span>
                         )}
-                        <span>{formatNewsDate(item.date)}</span>
+                        <span>{getDateLabel(item)}</span>
                       </div>
                       <h2 className="text-lg font-medium text-blauw leading-snug mb-2 group-hover:text-magenta transition-colors">
                         {item.title}

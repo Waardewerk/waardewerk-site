@@ -41,6 +41,7 @@ export default function Nav({ onContact: _ }: Props) {
         </Link>
 
         <div className="hidden md:flex items-center gap-7 text-sm text-grijs font-medium">
+          <Link to="/nieuws" className={`hover:text-blauw transition-colors ${location.pathname.startsWith('/nieuws') ? 'text-blauw' : ''}`}>Nieuws</Link>
           <Link to="/sroi-monitor" className={`hover:text-blauw transition-colors ${location.pathname === '/sroi-monitor' ? 'text-blauw' : ''}`}>SROI Monitor</Link>
           <button onClick={() => scrollTo('contact')} className="hover:text-blauw transition-colors">Contact</button>
         </div>
@@ -90,6 +91,7 @@ export default function Nav({ onContact: _ }: Props) {
 
       {open && (
         <div className="md:hidden bg-white border-t border-lijn px-6 py-4 flex flex-col gap-4 text-sm font-medium text-grijs">
+          <Link to="/nieuws" onClick={() => setOpen(false)}>Nieuws</Link>
           <Link to="/sroi-monitor" onClick={() => setOpen(false)}>SROI Monitor</Link>
           <button className="text-left" onClick={() => scrollTo('contact')}>Contact</button>
           <div className="border-t border-lijn pt-3 flex flex-col gap-2">

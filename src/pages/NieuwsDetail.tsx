@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import Seo from '../components/Seo';
-import { getNewsBySlug, getAllNews, formatNewsDate } from '../data/news';
+import { getNewsBySlug, getAllNews, getDateLabel } from '../data/news';
 
 export default function NieuwsDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -75,7 +75,7 @@ export default function NieuwsDetailPage() {
                   {item.tag}
                 </span>
               )}
-              <span>{formatNewsDate(item.date)}</span>
+              <span>{getDateLabel(item)}</span>
               {item.author && <span>· {item.author}</span>}
             </div>
 
@@ -104,6 +104,20 @@ export default function NieuwsDetailPage() {
                 <p key={i}>{p}</p>
               ))}
             </div>
+
+            {item.spotify && (
+              <div className="mt-8 rounded-2xl overflow-hidden">
+                <iframe
+                  src={`https://open.spotify.com/embed/episode/${item.spotify}`}
+                  width="100%"
+                  height="152"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title={item.title}
+                />
+              </div>
+            )}
 
             <div className="mt-14 pt-8 border-t border-lijn flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <Link
@@ -142,7 +156,7 @@ export default function NieuwsDetailPage() {
                           {r.tag}
                         </span>
                       )}
-                      <span>{formatNewsDate(r.date)}</span>
+                      <span>{getDateLabel(r)}</span>
                     </div>
                     <h3 className="text-base font-medium text-blauw leading-snug mb-2 group-hover:text-magenta transition-colors">
                       {r.title}
