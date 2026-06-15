@@ -25,6 +25,7 @@ export const NEWS: NewsItem[] = [
     date: '2026-06-15',
     dateLabel: 'Juni 2026',
     tag: 'Podcast',
+    image: '/praktijkmeestersstudio.jpg',
     spotify: '4ups2ET63AaKPygWpbDdhe',
     excerpt: 'Doordat je de mensen niet meer vindt, is de echte vraag hoe je het werk anders organiseert.',
     content: [
@@ -36,7 +37,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     slug: 'the-future-is-now',
-    title: 'The Future is Now\!',
+    title: 'The Future is Now!',
     date: '2026-04-23',
     tag: 'Innovatie',
     youtube: 'TMpqucngavY',
@@ -45,9 +46,9 @@ export const NEWS: NewsItem[] = [
     content: [
       `Gisteren heb ik mijn Tesla omgebouwd met Full Self Driving Supervised FSD (het was een software-update van 20 minuten) en toen kon ik gaan zitten, handen op schoot, ogen op de weg (je blijft zelf verantwoordelijk) en rijden maar.`,
       `Het is echt mindblowing wat hier gebeurt. De rijervaring is zo soepel en veilig dat je al heel snel went dat je controle op de weg overgeeft aan een robot.`,
-      `Je drukt letterlijk op de knop FSD starten en hij gaat naar de ingevoerde bestemming en zet de auto voor de deur. Dat de auto kan sturen en afstanden kan inschatten, dat lijkt me logisch voor een calculerende robot vol sensoren en camera’s. Wat me het meest verbaasde was het inschatten van afwijkende situaties. In een 30 km zone stond een oudere dame langs de kant van de straat, het was geen oversteekplaats en ze gaf niet duidelijk aan wat ze wilde doen. Toch stopte de auto en liet haar oversteken — zoals je dat zelf ook zou kunnen doen, niet vanuit moeten, vanuit willen. Heel bijzonder en menselijk qua handelen.`,
+      `Je drukt letterlijk op de knop FSD starten en hij gaat naar de ingevoerde bestemming en zet de auto voor de deur. Dat de auto kan sturen en afstanden kan inschatten, dat lijkt me logisch voor een calculerende robot vol sensoren en camera's. Wat me het meest verbaasde was het inschatten van afwijkende situaties. In een 30 km zone stond een oudere dame langs de kant van de straat, het was geen oversteekplaats en ze gaf niet duidelijk aan wat ze wilde doen. Toch stopte de auto en liet haar oversteken — zoals je dat zelf ook zou kunnen doen, niet vanuit moeten, vanuit willen. Heel bijzonder en menselijk qua handelen.`,
       `Wat er direct in me opkwam is wat de impact op mobiliteit is van deze stap. Inmiddels zijn er 12 miljard kilometers gereden met FSD en de kans op ongevallen is 92% minder dan met een menselijke chauffeur. Hoelang gaat het duren voor dat verzekeraars de premie voor menselijke chauffeurs gaan verhogen of iemand helemaal niet meer gaan verzekeren — 2 jaar? 5 jaar? Verzekeraars kunnen behoorlijk bepalend zijn in sommige industrieën.`,
-      `Complimenten voor de RDW om dit toe te staan op de Nederlandse wegen. Dat had ik niet verwacht. Ben benieuwd welk land volgt en al helemaal wanneer het, net als in de VS in bepaalde staten, wordt toegestaan om helemaal autonoom te rijden — niet “supervised”.`,
+      `Complimenten voor de RDW om dit toe te staan op de Nederlandse wegen. Dat had ik niet verwacht. Ben benieuwd welk land volgt en al helemaal wanneer het, net als in de VS in bepaalde staten, wordt toegestaan om helemaal autonoom te rijden — niet "supervised".`,
       `Wil je dit een keer ervaren en meteen eens van gedachten wisselen over wat robotisering voor jouw organisatie kan betekenen? Mail naar ruud@waardewerk.org`,
     ],
   },
