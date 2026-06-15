@@ -5,19 +5,11 @@ import ContactModal from '../components/ContactModal';
 import Seo from '../components/Seo';
 
 type FormState = 'idle' | 'sending' | 'sent' | 'error';
-type DownloadChoice = 'whitepaper' | 'infographic';
 
-const DOWNLOADS: Record<DownloadChoice, { label: string; file: string; desc: string }> = {
-  whitepaper: {
-    label: 'Whitepaper',
-    file: '/Whitepaper.pdf',
-    desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return , en er een duurzame strategie van maakt.',
-  },
-  infographic: {
-    label: 'Infographic',
-    file: '/two_infographic.pdf',
-    desc: 'Bekijk onze infographic over de TWO en zie in één oogopslag hoe de tewerkstellingsorganisatie werkt.',
-  },
+const WHITEPAPER = {
+  label: 'Whitepaper',
+  file: '/Whitepaper.pdf',
+  desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return , en er een duurzame strategie van maakt.',
 };
 
 const bulletpoints = [
@@ -32,18 +24,12 @@ export default function DienstenPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'sociaal' | 'tech'>('sociaal');
   const [wpStatus, setWpStatus] = useState<FormState>('idle');
-  const [downloadChoice, setDownloadChoice] = useState<DownloadChoice>('whitepaper');
-
-  function handleChoiceChange(c: DownloadChoice) {
-    setDownloadChoice(c);
-    setWpStatus('idle');
-  }
 
   async function handleWhitepaperSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setWpStatus('sending');
     const data = new FormData(e.currentTarget);
-    data.append('download', DOWNLOADS[downloadChoice].label);
+    data.append('download', WHITEPAPER.label);
     try {
       const payload: Record<string, string> = {};
       data.forEach((v, k) => { payload[k] = v as string; });
@@ -271,7 +257,7 @@ export default function DienstenPage() {
               </div>
             </section>
 
-            {/* Whitepaper / Infographic */}
+            {/* Whitepaper */}
             <section className="py-20 px-6 bg-blauw">
               <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
                 {/* Links */}
@@ -281,44 +267,24 @@ export default function DienstenPage() {
                     Regie & Eigenaarschap<br />bij de Werkgever
                   </h2>
                   <p className="text-white/70 text-sm leading-relaxed mb-6">
-                    {DOWNLOADS[downloadChoice].desc}
+                    {WHITEPAPER.desc}
                   </p>
-                  {downloadChoice === 'whitepaper' && (
-                    <ul className="space-y-3">
-                      {bulletpoints.map(b => (
-                        <li key={b} className="flex gap-3 text-sm text-white/80">
-                          <span className="w-5 h-5 rounded-full bg-magenta flex-shrink-0 flex items-center justify-center mt-0.5">
-                            <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="space-y-3">
+                    {bulletpoints.map(b => (
+                      <li key={b} className="flex gap-3 text-sm text-white/80">
+                        <span className="w-5 h-5 rounded-full bg-magenta flex-shrink-0 flex items-center justify-center mt-0.5">
+                          <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 {/* Formulier */}
                 <div className="bg-white rounded-2xl p-6">
-                  {/* Keuze-tabs */}
-                  <div className="flex gap-2 mb-4">
-                    {(['whitepaper', 'infographic'] as DownloadChoice[]).map(c => (
-                      <button
-                        key={c}
-                        type="button"
-                        onClick={() => handleChoiceChange(c)}
-                        className={`flex-1 py-2 text-sm font-medium rounded-xl transition-colors ${
-                          downloadChoice === c
-                            ? 'bg-magenta text-white'
-                            : 'bg-magenta-licht text-magenta hover:bg-magenta/20'
-                        }`}
-                      >
-                        {DOWNLOADS[c].label}
-                      </button>
-                    ))}
-                  </div>
-
                   {wpStatus === 'sent' ? (
                     <div className="flex flex-col items-center text-center gap-4 py-6">
                       <div className="w-12 h-12 rounded-full bg-magenta-licht flex items-center justify-center">
@@ -328,22 +294,22 @@ export default function DienstenPage() {
                       </div>
                       <div>
                         <p className="font-medium text-blauw mb-1">Aanvraag ontvangen!</p>
-                        <p className="text-sm text-grijs mb-4">We sturen je de {DOWNLOADS[downloadChoice].label.toLowerCase()} zo snel mogelijk toe.</p>
+                        <p className="text-sm text-grijs mb-4">We sturen je de {WHITEPAPER.label.toLowerCase()} zo snel mogelijk toe.</p>
                       </div>
                       <a
-                        href={DOWNLOADS[downloadChoice].file}
+                        href={WHITEPAPER.file}
                         download
                         className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
-                        Download {DOWNLOADS[downloadChoice].label.toLowerCase()}
+                        Download {WHITEPAPER.label.toLowerCase()}
                       </a>
                     </div>
                   ) : (
                     <form onSubmit={handleWhitepaperSubmit} className="flex flex-col gap-3">
-                      <h3 className="font-medium text-blauw mb-1">Ontvang de {DOWNLOADS[downloadChoice].label.toLowerCase()} gratis</h3>
+                      <h3 className="font-medium text-blauw mb-1">Ontvang de {WHITEPAPER.label.toLowerCase()} gratis</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <div>
                           <label className="block text-xs font-medium text-blauw mb-1">Voornaam</label>
@@ -376,7 +342,7 @@ export default function DienstenPage() {
                       </div>
                       <label className="flex items-start gap-2 text-xs text-grijs cursor-pointer">
                         <input name="akkoord" required type="checkbox" className="mt-0.5 accent-magenta" />
-                        <span>Ik ga akkoord met de verwerking van mijn gegevens om de {DOWNLOADS[downloadChoice].label.toLowerCase()} toe te sturen.</span>
+                        <span>Ik ga akkoord met de verwerking van mijn gegevens om de {WHITEPAPER.label.toLowerCase()} toe te sturen.</span>
                       </label>
                       {wpStatus === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Probeer opnieuw.</p>}
                       <button
@@ -384,7 +350,7 @@ export default function DienstenPage() {
                         disabled={wpStatus === 'sending'}
                         className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3 rounded-full transition-colors text-sm mt-1"
                       >
-                        {wpStatus === 'sending' ? 'Versturen…' : `${DOWNLOADS[downloadChoice].label} ontvangen →`}
+                        {wpStatus === 'sending' ? 'Versturen…' : `${WHITEPAPER.label} ontvangen →`}
                       </button>
                     </form>
                   )}

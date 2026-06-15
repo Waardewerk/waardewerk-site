@@ -53,7 +53,6 @@ Navigatievolgorde: Diensten · Sociale zaak · SROI Monitor · Over ons · Conta
 | `Waardewerk-logo.png` | Transparante PNG |
 | `favicon.ico` | Gegenereerd vanuit logo |
 | `Whitepaper.pdf` | Download via diensten |
-| `two_infographic.pdf` | TWO/SROI infographic |
 | `linkedin-banner.jpg` | Hero achtergrond Diensten pagina |
 ---
 ## Contentregels

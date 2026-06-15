@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import LeadCaptureModal from './LeadCaptureModal';
 
-type DownloadChoice = 'whitepaper' | 'infographic';
-
 export default function TWO() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalChoice, setModalChoice] = useState<DownloadChoice>('whitepaper');
 
-  function openModal(choice: DownloadChoice) {
-    setModalChoice(choice);
+  function openModal() {
     setModalOpen(true);
   }
 
@@ -111,19 +107,15 @@ export default function TWO() {
             <a href="#contact" style={{ background: '#fff', color: '#1B3A6B', borderRadius: 8, padding: '11px 20px', fontSize: 14, fontWeight: 600, textAlign: 'center', textDecoration: 'none', display: 'block' }}>
               Neem contact op
             </a>
-            <button onClick={() => openModal('whitepaper')} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.45)', borderRadius: 8, padding: '11px 20px', fontSize: 14, fontWeight: 500, textAlign: 'center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7 }}>
+            <button onClick={() => openModal()} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.45)', borderRadius: 8, padding: '11px 20px', fontSize: 14, fontWeight: 500, textAlign: 'center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7 }}>
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M5 7l3 3 3-3M2 12v2h12v-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               Download whitepaper
-            </button>
-            <button onClick={() => openModal('infographic')} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.45)', borderRadius: 8, padding: '11px 20px', fontSize: 14, fontWeight: 500, textAlign: 'center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7 }}>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M5 7l3 3 3-3M2 12v2h12v-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              Download infographic
             </button>
           </div>
         </div>
 
       </div>
-      <LeadCaptureModal open={modalOpen} onClose={() => setModalOpen(false)} initialChoice={modalChoice} />
+      <LeadCaptureModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

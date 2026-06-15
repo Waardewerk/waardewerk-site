@@ -1,29 +1,22 @@
 import { useState, useEffect } from 'react';
 
-type DownloadChoice = 'whitepaper' | 'infographic';
 type FormState = 'idle' | 'sending' | 'sent' | 'error';
 
-const DOWNLOADS: Record<DownloadChoice, { label: string; file: string }> = {
-  whitepaper: { label: 'Whitepaper', file: '/Whitepaper.pdf' },
-  infographic: { label: 'Infographic', file: '/two_infographic.pdf' },
-};
+const WHITEPAPER = { label: 'Whitepaper', file: '/Whitepaper.pdf' };
 
 interface Props {
   open: boolean;
   onClose: () => void;
-  initialChoice?: DownloadChoice;
 }
 
-export default function LeadCaptureModal({ open, onClose, initialChoice = 'whitepaper' }: Props) {
-  const [choice, setChoice] = useState<DownloadChoice>(initialChoice);
+export default function LeadCaptureModal({ open, onClose }: Props) {
   const [status, setStatus] = useState<FormState>('idle');
 
   useEffect(() => {
     if (open) {
-      setChoice(initialChoice);
       setStatus('idle');
     }
-  }, [open, initialChoice]);
+  }, [open]);
 
   if (!open) return null;
 
@@ -31,7 +24,7 @@ export default function LeadCaptureModal({ open, onClose, initialChoice = 'white
     e.preventDefault();
     setStatus('sending');
     const data = new FormData(e.currentTarget);
-    data.append('download', DOWNLOADS[choice].label);
+    data.append('download', WHITEPAPER.label);
     try {
       const payload: Record<string, string> = {};
       data.forEach((v, k) => { payload[k] = v as string; });
@@ -49,7 +42,7 @@ export default function LeadCaptureModal({ open, onClose, initialChoice = 'white
     }
   }
 
-  const dl = DOWNLOADS[choice];
+  const dl = WHITEPAPER;
 
   return (
     <div
@@ -92,23 +85,6 @@ export default function LeadCaptureModal({ open, onClose, initialChoice = 'white
           </div>
         ) : (
           <>
-            <div className="flex gap-2 mb-4">
-              {(['whitepaper', 'infographic'] as DownloadChoice[]).map(c => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => setChoice(c)}
-                  className={`flex-1 py-2 text-sm font-medium rounded-xl transition-colors ${
-                    choice === c
-                      ? 'bg-magenta text-white'
-                      : 'bg-magenta-licht text-magenta hover:bg-magenta/20'
-                  }`}
-                >
-                  {DOWNLOADS[c].label}
-                </button>
-              ))}
-            </div>
-
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <h3 className="font-medium text-blauw mb-1">Ontvang de {dl.label.toLowerCase()} gratis</h3>
               <div className="grid grid-cols-2 gap-3">
