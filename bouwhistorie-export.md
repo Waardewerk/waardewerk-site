@@ -1,218 +1,205 @@
 # Bouwhistorie — Waardewerk Site
-
-## 1. Projectoverzicht
-
-**Naam:** Waardewerk (handelsnaam van Let's Be Well BV, KvK 95443088, 's-Hertogenbosch)
-**Oprichter:** Ruud Blom
-**Doel:** Waardewerk ondersteunt ondernemers in de bouw- en infrasector met sociale innovatie (Social Return / SROI) en technologische innovatie (robotica, AI). De site is het visitekaartje: diensten, visie, nieuws en een doorverwijzing naar de SROI Monitor.
-
-**Live URL:** waardewerk.org
-**Lokale projectmap:** `C:\Users\ruudm\waardewerk-site\`
-**GitHub repo:** Waardewerk/waardewerk-site (branch `main`)
-**Vercel:** project `waardewerk-site` (projectId `prj_psYdNM7spLHIqGefm8HkJrw770Li`, org `team_879vSWJYjEkb7vov9DxgJLmJ`). Elke push naar `main` deployt automatisch.
-**Gerelateerd project:** sroi-monitor.vercel.app — los Vercel-project/repo, wordt fullscreen ingeladen via iframe op `/sroi-monitor`.
+*Actuele projectdocumentatie. Bijwerken na elke significante wijziging.*
 
 ---
 
-## 2. Tech stack
+## 1. PROJECTOVERZICHT
 
-| Onderdeel | Versie / tool |
+| | |
 |---|---|
-| React | ^19.2.4 |
-| React DOM | ^19.2.4 |
-| React Router | ^7.14.0 |
-| TypeScript | ~5.9.3 |
-| Vite | ^8.0.1 (+ @vitejs/plugin-react ^6.0.1) |
-| Tailwind CSS | ^3.4.19 (+ postcss ^8.5.8, autoprefixer ^10.4.27) |
-| ESLint | ^9.39.4 (+ typescript-eslint ^8.57.0) |
-| Resend | ^4.0.0 (e-mail API, in `api/contact.ts`) |
-| @vercel/node | ^5.0.0 (types voor serverless function) |
-
-**Build-proces** (`npm run build`):
-```
-tsc -b && vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs
-```
-Dit is **geen draaiende SSR-server**. De SSR-build (`entry-server.tsx`) wordt alleen gebruikt door `scripts/prerender.mjs` om elke route (inclusief alle nieuws-slugs) eenmalig naar statische HTML te renderen, plus een sitemap.xml en robots.txt te genereren. Het resultaat is een volledig statische site in `dist/`, die Vercel als static output serveert (`outputDirectory: dist/client` in `vercel.json`). Dit past bij de regel "altijd static export, nooit SSR" — er draait geen server-runtime.
-
-`src/main.tsx` hydrateert deze statische HTML aan de clientzijde (`hydrateRoot`) of mount normaal als er nog geen geprerenderde HTML is.
+| **Bedrijf** | Waardewerk (handelsnaam Let's Be Well BV, KvK 95443088) |
+| **Oprichter** | Ruud Blom, 's-Hertogenbosch |
+| **Website** | waardewerk.org |
+| **Repo** | github.com/Waardewerk/waardewerk-site (branch: main) |
+| **Hosting** | Vercel — auto-deploy op push naar main |
+| **Vercel project** | prj_psYdNM7spLHIqGefm8HkJrw770Li (org: team_879vSWJYjEkb7vov9DxgJLmJ) |
 
 ---
 
-## 3. Huisstijl
+## 2. TECH STACK
 
-**Kleuren** (`tailwind.config.js`):
-
-| Naam | Hex | Gebruik |
+| Package | Versie | Rol |
 |---|---|---|
-| `blauw` | `#1a2e45` | Primaire kleur, koppen, tekst |
-| `magenta` | `#C4006A` | Accentkleur, knoppen, eyebrows |
-| `magenta-licht` | `#FCE8F3` | Lichte achtergrondvlakken |
-| `magenta-mid` | `#F9A8D4` | Lichtroze accent (hero-highlight) |
-| `grijs` | `#64748b` | Lopende tekst |
-| `lijn` | `#ede8f0` | Randen/dividers |
-| `bg-alt` | `#FAFAF9` | Alternatieve sectie-achtergrond |
+| react | ^19.2.4 | UI framework |
+| react-dom | ^19.2.4 | DOM renderer |
+| react-router-dom | ^7.14.0 | Client-side routing |
+| typescript | ~5.9.3 | Type-checking |
+| vite | ^8.0.1 | Build tool |
+| tailwindcss | ^3.4.19 | Utility CSS |
 
-**Lettertype:** Inter, gewichten 400/500/600, geladen via Google Fonts in `index.html`. Body-font ingesteld in `src/index.css`.
-
-**Eyebrow-stijl** (`.eyebrow` in `src/index.css`): 11px, uppercase, 600, letter-spacing 0.08em, kleur magenta — gebruikt op vrijwel elke sectie als labeltje.
-
-**Overig in `index.css`:** marquee-animatie (28s, pauzeert on hover) voor de logo-carrousel.
-
-**Logo's en favicons in `/public`:** `Waardewerk-logo.png` (transparant, gebruikt in `Nav.tsx`), `wwlogodonkerblauw.png` en `wwlogotransp.png` (alternatieve varianten, niet aangeroepen in de code), `favicon.ico` en `favicon.svg`.
+**Buildscript:**
+```
+tsc -b && vite build (client) && vite build --ssr (server) && node scripts/prerender.mjs
+```
+De SSR-build wordt uitsluitend gebruikt voor `prerender.mjs` — dat genereert statische HTML-snapshots per route voor SEO. Er is geen runtime SSR; de site is volledig statisch.
 
 ---
 
-## 4. Volledige paginastructuur (uit `src/App.tsx`)
+## 3. HUISSTIJL
 
-| Route | Bestand | Type | Inhoud |
-|---|---|---|---|
-| `/` | `src/App.tsx` (component `HomePage`) | Onepager | Hero → LogoCarrousel → OnsVerhaal → OverOns → Nieuws (teaser) → Contact → Footer |
-| `/diensten` | `src/pages/Diensten.tsx` | Pagina | Hero met tabs "Sociale innovatie" / "Technologische innovatie", uitleg Social Return, 4-stappen TWO-aanpak, whitepaper/infographic-leadform |
-| `/sroi-monitor` | `src/pages/SROIMonitor.tsx` | Fullscreen iframe | Embed van `sroi-monitor.vercel.app` — **niet aanraken** |
-| `/nieuws` | `src/pages/Nieuws.tsx` | Overzicht | Grid met alle nieuwsitems uit `news.ts` |
-| `/nieuws/:slug` | `src/pages/NieuwsDetail.tsx` | Detail | Toont één nieuwsitem (youtube/afbeelding/spotify + tekst), 404-fallback, "ook interessant"-sectie |
-| `/privacy` | `src/pages/Privacy.tsx` | Pagina | Privacyverklaring |
-| `/over-ons` | `src/pages/OverOns.tsx` | Pagina | `OnsVerhaal` + `OverOns` (bio Ruud Blom) |
-
-**Let op (open punt):** CLAUDE.md noemt ook een route `/algemene-voorwaarden`, maar die bestaat niet in `App.tsx`. De Footer linkt rechtstreeks naar het statische bestand `/algemene-voorwaarden.pdf` in `/public`, niet naar een React-pagina.
+| Element | Waarde |
+|---|---|
+| Primair blauw | `#1a2e45` (Tailwind: `blauw`) |
+| Magenta | `#C4006A` (Tailwind: `magenta`) |
+| Magenta licht | `#FCE8F3` (Tailwind: `magenta-licht`) |
+| Magenta mid | `#F9A8D4` (Tailwind: `magenta-mid`) |
+| Grijs | `#64748b` (Tailwind: `grijs`) |
+| Lijn | `#ede8f0` (Tailwind: `lijn`) |
+| Achtergrond alt | `#FAFAF9` (Tailwind: `bg-alt`) |
+| Font | Inter 400/500/600 via Google Fonts |
+| Eyebrow stijl | `.eyebrow` — 11px, uppercase, magenta, letter-spacing 0.08em, weight 600 |
+| Knoppen | Pill-stijl, border-radius 100px |
+| Marquee animatie | `@keyframes marquee` in `src/index.css` |
 
 ---
 
-## 5. Componentenstructuur
+## 4. SITESTRUCTUUR
 
-### `src/components`
+| Route | Component | Beschrijving |
+|---|---|---|
+| `/` | `HomePage` (in App.tsx) | Onepager: Hero → LogoCarrousel → OnsVerhaal → OverOns → Nieuws → Contact |
+| `/nieuws` | `pages/Nieuws.tsx` | Nieuwsoverzicht, alle items |
+| `/nieuws/:slug` | `pages/NieuwsDetail.tsx` | Detailpagina per item, met YouTube/image hero en Spotify embed |
+| `/sroi-monitor` | `pages/SROIMonitor.tsx` | Fullscreen iframe → sroi-monitor.vercel.app — NIET AANRAKEN |
+| `/privacy` | `pages/Privacy.tsx` | Privacybeleid |
+| `/over-ons` | `pages/OverOns.tsx` | Missie en bio Ruud Blom |
 
-| Bestand | Beschrijving |
-|---|---|
-| `Nav.tsx` | Sticky navigatiebalk (desktop + mobiel), logo, links naar Nieuws/SROI Monitor, contact-popover met telefoon/e-mail |
-| `Hero.tsx` | Hero-sectie homepage, achtergrond `hero-breed.jpg`, kop met lichtroze "Waardewerk"-highlight |
-| `LogoCarrousel.tsx` | Animerende marquee met partnerlogo's (Van Meer, KVDM, BAM, TU Delft, RoboHouse) |
-| `OnsVerhaal.tsx` | "Ons verhaal"-sectie: Technologische Innovatie + Sociale Innovatie, afbeelding `robots-stratenmaker.png` |
-| `OverOns.tsx` | Bio Ruud Blom met foto (`ruud.jpg`, met fallback-initialen) |
-| `Nieuws.tsx` | Nieuws-teaser op homepage: 1 uitgelichte kaart + 2 compacte kaarten, link "Alle berichten" |
-| `Contact.tsx` | Contactformulier-sectie homepage, verstuurt naar Formspree |
-| `ContactModal.tsx` | Modal "Neem contact op", verstuurt naar formsubmit.co |
-| `LeadCaptureModal.tsx` | Modal voor whitepaper/infographic-download, verstuurt naar formsubmit.co |
-| `Footer.tsx` | Footer met copyright en links naar Privacy en Algemene voorwaarden (pdf) |
-| `Seo.tsx` | Zet `<title>`, meta-description en Open Graph/Twitter-tags via React 19 head-hoisting |
-
-**Niet (meer) gebruikte componenten** (niet geïmporteerd in `App.tsx` of elders — vermoedelijk legacy uit een eerdere opzet):
-- `Diensten.tsx` (oudere diensten-grid + statsbalk, vervangen door `pages/Diensten.tsx`)
-- `LogoBalk.tsx` (tekstuele "Actief met"-balk, vervangen door `LogoCarrousel.tsx`)
-- `Monitor.tsx` (SROI Monitor als sectie-component, vervangen door `pages/SROIMonitor.tsx`)
-- `Referenties.tsx` (testimonials-sectie, bevat alleen placeholder-tekst "Referentie volgt binnenkort")
-- `SocialeZaken.tsx` (Social Return-sectie met `Verkeersregelaars.png`)
-- `TWO.tsx` (uitgebreide TWO-uitleg met eigen CTA, gebruikt `LeadCaptureModal`)
-
-### `src/pages`
-
-| Bestand | Beschrijving |
-|---|---|
-| `Diensten.tsx` | `/diensten` — zie sectie 4 |
-| `Nieuws.tsx` | `/nieuws` — overzicht |
-| `NieuwsDetail.tsx` | `/nieuws/:slug` — detail |
-| `OverOns.tsx` | `/over-ons` |
-| `Privacy.tsx` | `/privacy` |
-| `SROIMonitor.tsx` | `/sroi-monitor` |
-
-### `src/data`
-
-| Bestand | Datastructuur |
-|---|---|
-| `news.ts` | `NEWS: NewsItem[]` + helpers `getAllNews`, `getLatestNews`, `getNewsBySlug`, `formatNewsDate`, `getDateLabel`. `NewsItem` velden: `slug`, `title`, `date` (ISO, bepaalt sortering), `dateLabel?`, `excerpt`, `author?`, `image?`, `tag?`, `content: string[]`, `youtube?`, `spotify?` |
-| `gemeenten.ts` | 196 regels, types `Status`, `BouwblokItem`, `MaatwerkActiviteit`, `Succesverhaal`, `GemeenteProfile` — gemeente-specifieke SROI-data. **Wordt nergens in `src` geïmporteerd** (dood bestand) |
+**Navigatie (Nav.tsx):** Nieuws · SROI Monitor · Contact (scroll) · Neem contact op (popover met telefoon + mail)
 
 ---
 
-## 6. Nieuwssysteem
+## 5. COMPONENTENSTRUCTUUR
 
-**Opbouw:**
-- **Databestand:** `src/data/news.ts` — array `NEWS` met alle items, nieuwste boven.
-- **Overzichtspagina:** `src/pages/Nieuws.tsx` (`/nieuws`) — toont `getAllNews()` als kaartgrid (1/2/3 kolommen).
-- **Detailpagina:** `src/pages/NieuwsDetail.tsx` (`/nieuws/:slug`) — toont titel, tag, datum, hero (YouTube-embed óf afbeelding), tekstparagrafen, optioneel Spotify-embed, en 2 gerelateerde items. 404-pagina bij onbekende slug.
-- **Homepage-teaser:** `src/components/Nieuws.tsx` (sectie `#nieuws` op `/`) — toont de 3 nieuwste items: 1 grote "Featured"-kaart + 2 compacte kaarten.
-- **Prerender:** `scripts/prerender.mjs` leest `getAllNews()` uit de SSR-bundle en genereert voor elke slug een statische `/nieuws/<slug>/index.html`, plus regels in `sitemap.xml`.
+Alle actieve componenten in `src/components/`:
 
-**Nieuw nieuwsitem toevoegen (stap voor stap):**
-1. Open `src/data/news.ts`.
-2. Plak een nieuw object **bovenaan** de `NEWS`-array (volgorde is niet belangrijk voor sortering — die gebeurt op `date`, maar bovenaan houdt het overzichtelijk).
-3. Verplichte velden: `slug` (uniek, alleen kleine letters/cijfers/koppeltekens — wordt de URL), `title`, `date` (ISO `YYYY-MM-DD`), `excerpt`, `content` (array van paragraaf-strings).
-4. Optioneel: `dateLabel` (bv. `'Juni 2026'` i.p.v. volledige datum), `tag` (bv. `'Podcast'`, `'Innovatie'`), `image` (pad onder `/public`, bv. `/foto.jpg`), `youtube` (video-ID), `spotify` (episode-ID), `author`.
-5. Bouwen (`npm run build`) zorgt dat de nieuwe route automatisch wordt geprerenderd en in de sitemap komt.
-6. Committen en pushen naar `main` → Vercel deployt automatisch.
+| Component | Gebruikt in | Beschrijving |
+|---|---|---|
+| `Nav.tsx` | Alle pagina's | Sticky navigatiebalk, popover met directe contactgegevens |
+| `Hero.tsx` | HomePage | Hero met CTA-knop |
+| `LogoCarrousel.tsx` | HomePage | Marquee met partnerlogo's |
+| `OnsVerhaal.tsx` | HomePage | Tekstblok over Waardewerk |
+| `OverOns.tsx` | HomePage + OverOnsPage | Bio Ruud Blom |
+| `Nieuws.tsx` | HomePage | Nieuws-teaser (FeaturedCard + CompactCards) |
+| `Contact.tsx` | HomePage | Contactformulier via Formspree |
+| `ContactModal.tsx` | HomePage | Modal contactformulier via formsubmit.co |
+| `Footer.tsx` | Alle pagina's | © 2026, links naar Privacy en Algemene voorwaarden |
+| `Seo.tsx` | Alle pagina's | React 19 head-hoisting voor title/description/canonical |
+
+Pagina's in `src/pages/`: `Nieuws.tsx` · `NieuwsDetail.tsx` · `OverOns.tsx` · `Privacy.tsx` · `SROIMonitor.tsx`
+
+Data in `src/data/`: alleen `news.ts`
+
+---
+
+## 6. NIEUWSSYSTEEM
+
+**Bestand:** `src/data/news.ts`
+
+**Interface `NewsItem`:**
+```ts
+{
+  slug: string       // URL-segment /nieuws/<slug> — lowercase, koppeltekens
+  title: string
+  date: string       // ISO YYYY-MM-DD, bepaalt sortering (nieuwste eerst)
+  body: string       // Samenvatting / intro tekst
+  tag?: string       // Optioneel label (bijv. 'Podcast', 'Innovatie')
+  dateLabel?: string // Vrije datumtekst (bijv. 'Juni 2026')
+  image?: string     // Pad (/public) of externe URL voor hero-afbeelding
+  youtube?: string   // YouTube video-ID
+  spotify?: string   // Spotify episode-ID
+}
+```
+
+**Helperfuncties:** `getAllNews()` · `getLatestNews(n)` · `getNewsBySlug(slug)` · `formatNewsDate(date)` · `getDateLabel(item)`
 
 **Huidige nieuwsitems:**
 
-| Titel | Datum | Tag | Extra |
+| Slug | Datum | Tag | Media |
 |---|---|---|---|
-| Te gast in de Praktijkmeesters podcast van Patrick Wagenaar | 15 juni 2026 (label "Juni 2026") | Podcast | Afbeelding `/praktijkmeestersstudio.jpg` + Spotify-embed (episode `4ups2ET63AaKPygWpbDdhe`) |
-| The Future is Now! | 23 april 2026 | Innovatie | YouTube-embed (`TMpqucngavY`) |
-| Is robotisering klaar voor de straatwerkbranche? | 1 april 2026 | Innovatie | Afbeelding `/robohouse-kickoff.jpeg` |
+| `praktijkmeesters-podcast-patrick-wagenaar` | 2026-06-15 | Podcast | image + Spotify |
+| `the-future-is-now` | 2026-04-23 | Innovatie | YouTube |
+| `is-robotisering-klaar-voor-de-straatwerkbranche` | 2026-04-01 | Innovatie | image |
+
+**Nieuw item toevoegen:**
+1. Open `src/data/news.ts`
+2. Voeg bovenaan de `NEWS` array een object toe (nieuwste eerst)
+3. Verplicht: `slug`, `title`, `date`, `body`
+4. Optioneel: `tag`, `dateLabel`, `image`, `youtube`, `spotify`
+5. Sla op en commit: `git add . && git commit -m "Nieuwsitem: [titel]" && git push`
 
 ---
 
-## 7. Externe koppelingen
+## 7. EXTERNE KOPPELINGEN
 
-| Koppeling | Gebruikt in | Doel |
+| Service | URL / ID | Gebruikt in |
 |---|---|---|
-| Formspree (`https://formspree.io/f/mgoqdjeq`) | `components/Contact.tsx` (homepage-contactformulier) | Formulierinzendingen per mail |
-| formsubmit.co (`https://formsubmit.co/ajax/ruudmblom@gmail.com`) | `ContactModal.tsx`, `LeadCaptureModal.tsx`, `pages/Diensten.tsx` (whitepaper-form) | Formulierinzendingen per mail (modals + downloadformulieren) |
-| Resend (`api/contact.ts`, serverless functie via `@vercel/node`) | Niet aangeroepen vanuit huidige formulieren | Stuurt mail via Resend naar `ruudmblom@gmail.com`; vereist env var `RESEND_API_KEY`. Lijkt een ongebruikt/alternatief contactkanaal (zie open punten) |
-| Spotify embed (`open.spotify.com/embed/episode/4ups2ET63AaKPygWpbDdhe`) | `pages/NieuwsDetail.tsx` (Praktijkmeesters-item) | Podcastspeler |
-| YouTube embed (`youtube.com/embed/TMpqucngavY`) | `pages/NieuwsDetail.tsx` ("The Future is Now!"-item) | Video |
-| SROI Monitor (`https://sroi-monitor.vercel.app`) | `pages/SROIMonitor.tsx` (fullscreen, `/sroi-monitor`) en `components/Monitor.tsx` (ongebruikt) | Los Vercel-project met SROI-data per gemeente, ingeladen via iframe |
-| Google Fonts | `index.html` | Inter (400/500/600) |
+| Formspree | `https://formspree.io/f/mgoqdjeq` | `Contact.tsx` — contactformulier homepage |
+| formsubmit.co | `https://formsubmit.co/ajax/ruudmblom@gmail.com` | `ContactModal.tsx` — modal contactformulier |
+| Spotify embed | episode-ID in `news.ts` | `NieuwsDetail.tsx` |
+| YouTube embed | video-ID in `news.ts` | `NieuwsDetail.tsx` |
+| SROI Monitor | `sroi-monitor.vercel.app` | `pages/SROIMonitor.tsx` (fullscreen iframe) |
+| Google Fonts | Inter | `index.html` |
 
 ---
 
-## 8. Assets (`/public`)
+## 8. PUBLIEKE ASSETS (`/public`)
+
+### Actief gebruikt
 
 | Bestand | Beschrijving |
 |---|---|
-| `Waardewerk-logo.png` | Hoofdlogo, gebruikt in `Nav.tsx` |
-| `wwlogodonkerblauw.png`, `wwlogotransp.png` | Alternatieve logo-varianten, niet aangeroepen in code |
-| `favicon.ico`, `favicon.svg` | Favicons |
-| `hero-breed.jpg` | Achtergrond hero homepage |
-| `hero-bouw.jpg` | Niet aangeroepen in code (mogelijk ongebruikt) |
-| `linkedin-banner.jpg` | Achtergrond hero `/diensten` én default OG-afbeelding (`Seo.tsx`) |
-| `robots-stratenmaker.png` | Afbeelding bij "Ons verhaal" |
-| `ruud.jpg` | Foto Ruud Blom (`OverOns.tsx`) |
-| `Verkeersregelaars.png` | Foto in ongebruikte component `SocialeZaken.tsx` |
-| `robohouse-kickoff.jpeg` | Afbeelding bij nieuwsitem "Is robotisering klaar..." |
-| `praktijkmeestersstudio.jpg` | **Nieuw** — afbeelding bij nieuwsitem Praktijkmeesters-podcast |
-| `Vanmeerlogo.png`, `Kvdmlogo.png`, `Bamlogo.png`, `Tudelftlogo.png`, `Robohouselogo.jpg` | Partnerlogo's in `LogoCarrousel.tsx` |
-| `Whitepaper.pdf` | Download via diensten-leadform |
-| `TWO-Infographic.pdf` | Infographic-bestand op de server |
-| `algemene-voorwaarden.pdf` | Algemene voorwaarden, gelinkt vanuit Footer |
-| `icons.svg` | Icon-sprite, niet aangeroepen in code |
-| `SROIdata.xlsx` | Databron-bestand, niet aangeroepen in code |
-| `sroi_page.html`, `two_page.html`, `two_infographic.html` | Standalone statische HTML-pagina's met eigen rewrites in `vercel.json` (`/sroi_page.html`, `/two_page.html`) |
+| `Waardewerk-logo.png` | Logo in Nav |
+| `favicon.ico` / `favicon.svg` | Browsericoon |
+| `algemene-voorwaarden.pdf` | Gelinkt vanuit Footer |
+| `linkedin-banner.jpg` | Hero-achtergrond |
+| `praktijkmeestersstudio.jpg` | Afbeelding podcast-nieuwsitem |
+| `robohouse-kickoff.jpeg` | Afbeelding robotisering-nieuwsitem |
+| `ruud.jpg` | Foto Ruud Blom (OverOns) |
+| `Bamlogo.png` / `Kvdmlogo.png` / `Tudelftlogo.png` / `Vanmeerlogo.png` / `Robohouselogo.jpg` / `Verkeersregelaars.png` | Partnerlogo's in LogoCarrousel |
+
+### Standalone HTML-pagina's (buiten React-app)
+
+| Bestand | Rewrite in vercel.json |
+|---|---|
+| `sroi_page.html` | Ja |
+| `two_page.html` | Ja |
+| `two_infographic.html` | Nee |
+
+### Aanwezig maar niet actief gelinkt
+
+`Whitepaper.pdf` · `SROIdata.xlsx` · `hero-bouw.jpg` · `hero-breed.jpg` · `icons.svg` · `wwlogodonkerblauw.png` · `wwlogotransp.png`
 
 ---
 
-## 9. Open punten
+## 9. DEPLOYMENT & GIT
 
-- **Niet-gecommitte wijzigingen** (`git status`): `src/App.tsx`, `src/components/OnsVerhaal.tsx`, `src/pages/Diensten.tsx` en `two-fase1-notion.md` staan gewijzigd maar ongecommit. Op verzoek van Ruud bewust ongemoeid gelaten bij de laatste deploy (alleen nieuws-bestanden zijn gecommit).
-- **Untracked bestanden:** `.gitignore_tmp2` en `.synctest_old` zijn lege debug-restanten uit een eerdere sessie en kunnen handmatig verwijderd worden.
-- **Mogelijk gebroken downloadlink:** `LeadCaptureModal.tsx` en `pages/Diensten.tsx` verwijzen naar `/two_infographic.pdf`, maar `/public` bevat `TWO-Infographic.pdf` (andere naam/hoofdletters). Op een case-sensitive server (Vercel) geeft dit een 404 op de infographic-download.
-- **`/algemene-voorwaarden`-route ontbreekt:** CLAUDE.md noemt deze route, maar in `App.tsx` bestaat hij niet — de Footer linkt naar het pdf-bestand direct.
-- **`src/data/gemeenten.ts`** (196 regels gemeente-SROI-data) wordt nergens geïmporteerd in `src`. Volgens CLAUDE.md mag gemeente-data uitsluitend in de `sroi-monitor`-repo staan — dit bestand kan vermoedelijk verwijderd worden.
-- **Zes ongebruikte componenten** (`Diensten`, `LogoBalk`, `Monitor`, `Referenties`, `SocialeZaken`, `TWO` in `src/components`) zijn niet meer gekoppeld aan een route — opruimen of bewust laten staan als referentiemateriaal.
-- **`api/contact.ts` (Resend)** lijkt niet aangeroepen door de huidige formulieren (die gebruiken Formspree/formsubmit.co). Onduidelijk of `RESEND_API_KEY` nog nodig is of dat dit een halfafgemaakt alternatief kanaal is.
-- **`Referenties.tsx`**: alleen placeholder-testimonials ("Referentie volgt binnenkort"), nog geen echte klantcitaten — en wordt sowieso niet getoond (zie hierboven).
-- **`two-fase1-notion.md`** (TWO Fase 1 "Richten"): alle 6 taken staan op status "Not started" met deadlines april/mei 2026 — inmiddels verstreken t.o.v. vandaag (15 juni 2026).
+- **Auto-deploy:** elke push naar `main` triggert Vercel-deploy
+- **Elke sessie afsluiten met:** `git add . && git commit -m "[omschrijving]" && git push`
+- **Prerender:** `scripts/prerender.mjs` genereert statische HTML per route via SSR-bundle (build-time only)
+- **vercel.json:** `outputDirectory: dist/client`, rewrites voor SPA-routing + `/sroi_page.html` + `/two_page.html`
 
 ---
 
-## 10. Cruciale beslissingen
+## 10. CRUCIALE REGELS
 
-- **Static export via prerender, geen draaiende SSR-server.** De build gebruikt een SSR-bundel (`entry-server.tsx`) puur als renderstap binnen `scripts/prerender.mjs`, die elke route (incl. dynamische nieuws-slugs) naar statische HTML omzet. Resultaat: een pure static site, conform de regel "altijd `output: export`, nooit SSR" — er is geen serverproces nodig op Vercel.
-- **SROI Monitor als losse iframe-embed.** De monitor draait als eigen Vercel-project (`sroi-monitor.vercel.app`) en wordt fullscreen ingeladen op `/sroi-monitor`. Dit ontkoppelt de twee codebases volledig, zodat gemeente-data nooit in deze repo hoeft te staan.
-- **Nieuwssysteem als simpele data-array, geen CMS.** `news.ts` is een TypeScript-array met helperfuncties. Eenvoudig uitbreidbaar zonder externe dependency, en de prerender pikt nieuwe slugs automatisch op.
-- **React 19 head-hoisting voor SEO** (`Seo.tsx`) in plaats van `react-helmet`. `<title>`/`<meta>`/`<link>` worden via een eigen extract-pass in `prerender.mjs` naar `<head>` getild, omdat `renderToString` dit niet automatisch doet.
-- **Twee parallelle contactkanalen** (Formspree voor het hoofdcontactformulier, formsubmit.co voor modals/leadforms) plus een ongebruikte Resend-serverless-functie — historisch gegroeid, nog niet opgeschoond.
-- **Tailwind-kleurenpalet als centrale huisstijlbron** (`tailwind.config.js`): blauw/magenta/grijs/lijn/bg-alt-tokens worden consistent door alle componenten gebruikt.
+1. **SROI Monitor nooit aanraken** (`/sroi-monitor`) — fullscreen iframe naar sroi-monitor.vercel.app; aanraken = iframe breekt
+2. **Nooit SSR** — altijd static export, geen `getServerSideProps`, geen API routes
+3. **Gemeente-data nooit hier** — uitsluitend in de `sroi-monitor` repository
+4. **Commit vóór complexe multi-file wijzigingen** — eerst backup-commit
 
 ---
 
-Gegenereerd op: 15 juni 2026
+## 11. ARCHITECTUURKEUZES
+
+| Beslissing | Reden |
+|---|---|
+| Statische export via prerender | Vercel hosting, geen server nodig, snelle laadtijd |
+| SROI Monitor als aparte repo + iframe | Gemeente-data en monitor-logica horen niet in de marketingsite |
+| Nieuws als data-array in `news.ts` | Geen CMS nodig voor kleine hoeveelheid items, simpel te onderhouden |
+| React 19 head-hoisting via `Seo.tsx` | Werkt native, geen extra library nodig |
+| Contactformulieren via Formspree / formsubmit.co | Geen backend of Resend-setup vereist |
+| Download-leadforms verwijderd (juni 2026) | Niet meer in gebruik; LeadCaptureModal, TWO component en Diensten-pagina opgeruimd |
+
+---
+
+*Gegenereerd op: 16 juni 2026*
