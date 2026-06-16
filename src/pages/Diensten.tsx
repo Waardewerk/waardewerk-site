@@ -4,48 +4,10 @@ import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import Seo from '../components/Seo';
 
-type FormState = 'idle' | 'sending' | 'sent' | 'error';
-
-const WHITEPAPER = {
-  label: 'Whitepaper',
-  file: '/Whitepaper.pdf',
-  desc: 'Ontvang ons gratis whitepaper en ontdek hoe je als werkgever de regie neemt over Social Return , en er een duurzame strategie van maakt.',
-};
-
-const bulletpoints = [
-  'Hoe je als werkgever eigenaarschap neemt over Social Return',
-  'Waarom regie bij de werkgever leidt tot duurzamere plaatsingen',
-  'Concrete aanpak voor de bouw- en infrasector',
-  'Stappenplan van intake tot impact-rapportage',
-  'Rekenmodel: wat levert een goede SROI-aanpak op?',
-];
 
 export default function DienstenPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'sociaal' | 'tech'>('sociaal');
-  const [wpStatus, setWpStatus] = useState<FormState>('idle');
-
-  async function handleWhitepaperSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setWpStatus('sending');
-    const data = new FormData(e.currentTarget);
-    data.append('download', WHITEPAPER.label);
-    try {
-      const payload: Record<string, string> = {};
-      data.forEach((v, k) => { payload[k] = v as string; });
-      payload['_subject'] = `Download aanvraag: ${payload['download'] || 'document'}`;
-      payload['_captcha'] = 'false';
-      payload['_template'] = 'table';
-      const res = await fetch('https://formsubmit.co/ajax/ruudmblom@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      setWpStatus(res.ok ? 'sent' : 'error');
-    } catch {
-      setWpStatus('error');
-    }
-  }
 
   return (
     <>
@@ -257,106 +219,6 @@ export default function DienstenPage() {
               </div>
             </section>
 
-            {/* Whitepaper */}
-            <section className="py-20 px-6 bg-blauw">
-              <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
-                {/* Links */}
-                <div>
-                  <p className="eyebrow mb-3" style={{ color: '#F9A8D4' }}>Downloads</p>
-                  <h2 className="text-2xl font-medium text-white leading-snug mb-4">
-                    Regie & Eigenaarschap<br />bij de Werkgever
-                  </h2>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6">
-                    {WHITEPAPER.desc}
-                  </p>
-                  <ul className="space-y-3">
-                    {bulletpoints.map(b => (
-                      <li key={b} className="flex gap-3 text-sm text-white/80">
-                        <span className="w-5 h-5 rounded-full bg-magenta flex-shrink-0 flex items-center justify-center mt-0.5">
-                          <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Formulier */}
-                <div className="bg-white rounded-2xl p-6">
-                  {wpStatus === 'sent' ? (
-                    <div className="flex flex-col items-center text-center gap-4 py-6">
-                      <div className="w-12 h-12 rounded-full bg-magenta-licht flex items-center justify-center">
-                        <svg className="w-6 h-6 text-magenta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="font-medium text-blauw mb-1">Aanvraag ontvangen!</p>
-                        <p className="text-sm text-grijs mb-4">We sturen je de {WHITEPAPER.label.toLowerCase()} zo snel mogelijk toe.</p>
-                      </div>
-                      <a
-                        href={WHITEPAPER.file}
-                        download
-                        className="inline-flex items-center gap-2 bg-magenta hover:bg-[#a8005a] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download {WHITEPAPER.label.toLowerCase()}
-                      </a>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleWhitepaperSubmit} className="flex flex-col gap-3">
-                      <h3 className="font-medium text-blauw mb-1">Ontvang de {WHITEPAPER.label.toLowerCase()} gratis</h3>
-                      <div className="grid grid-cols-2 gap-3">
-                        <div>
-                          <label className="block text-xs font-medium text-blauw mb-1">Voornaam</label>
-                          <input name="voornaam" required type="text" className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30" />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium text-blauw mb-1">Achternaam</label>
-                          <input name="achternaam" required type="text" className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30" />
-                        </div>
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-blauw mb-1">Zakelijk e-mailadres</label>
-                        <input name="email" required type="email" className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30" />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-blauw mb-1">Bedrijfsnaam</label>
-                        <input name="bedrijf" required type="text" className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30" />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-blauw mb-1">Functie</label>
-                        <select name="functie" required className="w-full px-3 py-2 text-sm border border-lijn rounded-xl focus:outline-none focus:ring-2 focus:ring-magenta/30 bg-white">
-                          <option value="">Selecteer...</option>
-                          <option>Directeur / eigenaar</option>
-                          <option>Manager / teamleider</option>
-                          <option>HR / P&O</option>
-                          <option>Inkoop / aanbesteding</option>
-                          <option>Gemeente / overheid</option>
-                          <option>Anders</option>
-                        </select>
-                      </div>
-                      <label className="flex items-start gap-2 text-xs text-grijs cursor-pointer">
-                        <input name="akkoord" required type="checkbox" className="mt-0.5 accent-magenta" />
-                        <span>Ik ga akkoord met de verwerking van mijn gegevens om de {WHITEPAPER.label.toLowerCase()} toe te sturen.</span>
-                      </label>
-                      {wpStatus === 'error' && <p className="text-red-500 text-xs">Er ging iets mis. Probeer opnieuw.</p>}
-                      <button
-                        type="submit"
-                        disabled={wpStatus === 'sending'}
-                        className="w-full bg-magenta hover:bg-[#a8005a] disabled:opacity-60 text-white font-medium py-3 rounded-full transition-colors text-sm mt-1"
-                      >
-                        {wpStatus === 'sending' ? 'Versturen…' : `${WHITEPAPER.label} ontvangen →`}
-                      </button>
-                    </form>
-                  )}
-                </div>
-              </div>
-            </section>
           </>
         )}
 
