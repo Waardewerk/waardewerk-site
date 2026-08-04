@@ -15,7 +15,7 @@ export default function OnsVerhaal() {
             <div className="border-l-4 border-magenta pl-5 mb-8">
               <h3 className="font-semibold text-magenta mb-3">Technologische Innovatie</h3>
               <p className="text-grijs leading-relaxed text-sm">
-                De ontwikkelingen gaan nog nooit zo snel als nu, dat geeft kansen, en bedreigingen. Omdat we zuinig moeten zijn op onze mensen, en soms omdat regelgeving ons dat vraagt, is technologie omarmen geen keuze meer. Van het robotiseren van straatwerk tot strategisch nadenken over AI: hier ondersteunen we bij en ontzorgen we jou in het proces. We helpen je de juiste keuzes te maken en je bedrijf met de mensen door de verandering te loodsen.
+                De ontwikkelingen gingen nog nooit zo snel als nu, dat geeft kansen, en bedreigingen. Omdat we zuinig moeten zijn op onze mensen, en soms omdat regelgeving ons dat vraagt, is technologie omarmen geen keuze meer. Van het robotiseren van straatwerk tot strategisch nadenken over AI: hier ondersteunen we bij en ontzorgen we jou in het proces. We helpen je de juiste keuzes te maken en je bedrijf met de mensen door de verandering te loodsen.
               </p>
             </div>
 
