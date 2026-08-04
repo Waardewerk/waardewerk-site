@@ -40,7 +40,7 @@ export default function OverOns() {
               De afgelopen jaren heb ik veel infra ondernemers/ambachtslieden bijgestaan met dit soort vraagstukken. Van het maken van een goed plan voor de toekomst tot robotisering van straatwerk. Heel praktisch en direct toepasbaar.
             </p>
             <p>
-              Veranderen is hard werken, wil je kunnen voortbestaan dan zul je wel moeten. Dit betekent veel voor je mensen en vraagt leiderschap van jou als ondernemer. Hier loods ik je doorheen recht voor je raap en met veel plezier.
+              Veranderen is hard werken, wil je kunnen voortbestaan dan zul je wel moeten. Dit betekent veel voor je mensen en vraagt leiderschap van jou als ondernemer. Hier loods ik je doorheen, recht voor je raap en met veel plezier.
             </p>
             <p className="text-blauw font-semibold text-base border-l-4 border-magenta pl-4 py-1">
               Vandaar Waardewerk, eigenwaarde door te werken en waarde leveren door het werk wat je doet, wat je ook doet. 
